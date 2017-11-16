@@ -2,44 +2,33 @@
 	function log(logText){
 		console.log(logText);
 	}
-	function hasClass(element, cls) {
-		return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-	}
+
+	var hasClass = (element, cls) => (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 
 	function addClass(element,cls){
 		if( !hasClass(element, cls) ){
 			let empty = '';
-			if(element.classList.value != "")
-				empty = ' ';
+			if(element.classList.value != "") empty = ' ';
 			element.className += empty + cls;
 		}
 	}
 
 	function removeClass(element, cls){
-		if(hasClass(element, cls)){
-			element.classList.remove(cls);
-		}
+		if( hasClass(element, cls) ) element.classList.remove(cls);
 	}
 
 	function toggleClass(element, cls){
-		if( hasClass(element, cls) ){
-			removeClass(element, cls)
-		}else{
-			addClass(element, cls);
-		}
+		hasClass(element, cls) ? removeClass(element, cls) : addClass(element, cls);
 	}
 
-	function exists(element){
-		return typeof(element) != 'undefined' && element != null;
-	}
+	var exists = element => typeof(element) != 'undefined' && element != null;
 
 (function(){
 	document.addEventListener("DOMContentLoaded", function(){
 
-		const d = document;
 		const classes = {
 			active: 'active',
-			menuActive: 'v-nav__menu_active'
+			menuActive: 'vnav__menu_active'
 		}
 
 		// Anchors links
@@ -55,7 +44,7 @@
 			}
 			
 			// Anchors
-				const anchors = d.getElementsByClassName('anchor');
+				const anchors = document.getElementsByClassName('anchor');
 
 				for(let i = 0; i < anchors.length; i++){
 					anchors[i].addEventListener('click', (e) => {
@@ -67,10 +56,10 @@
 				}
 			
 		// Navigation
-			const jsNav = d.getElementById('navigation');
+			const jsNav = document.getElementById('navigation');
 
 			// Navigation links
-				const jsNavLinks = d.querySelectorAll('.nav__menu a[href*="#"]');
+				const jsNavLinks = document.querySelectorAll('.nav__menu a[href*="#"]');
 
 				for(var i = 0; i < jsNavLinks.length; i++){
 					jsNavLinks[i].addEventListener('click', (e) => {
@@ -87,8 +76,8 @@
 					});
 				}
 
-			// Button menu
-				const jsNavBtn = d.getElementById('js-vnav__btn');
+			// Button HAMBURGER
+				const jsNavBtn = document.getElementById('js-vnav__btn');
 
 				if(exists(jsNavBtn)){
 					jsNavBtn.addEventListener('click', function(){
@@ -99,7 +88,7 @@
 
 
 			// Click on toggle element in navigation
-				const jsNavText = d.getElementById('js-nav-text');
+				const jsNavText = document.getElementById('js-vnav-addition');
 				if(exists(jsNavText)){
 					jsNavText.addEventListener('click', function() {
 						toggleClass(this, classes.active);
@@ -109,13 +98,13 @@
 
 		// Modal Window initialization
 		let themeModal = 'vmodal';
-		let modalBtn = d.querySelectorAll(`[data-action="${themeModal}"]`);
+		let modalBtn = document.querySelectorAll(`[data-action="${themeModal}"]`);
 		let modalBtnL = modalBtn.length;
 
-		const modal = d.querySelectorAll(`.${themeModal}`);
+		const modal = document.querySelectorAll(`.${themeModal}`);
 		const modalL = modal.length;
 
-		const modalBtnClose = d.querySelectorAll(`[data-close="${themeModal}"]`);
+		const modalBtnClose = document.querySelectorAll(`[data-close="${themeModal}"]`);
 		const modalBtnCloseL = modalBtnClose.length;
 
 		
@@ -172,7 +161,7 @@
 
 					// 	videoWrapper.innerHTML = '';
 
-					// 	let videoIframe = d.createElement('iframe');
+					// 	let videoIframe = document.createElement('iframe');
 
 					// 	addClass(videoIframe, 'v-modal__iframe');
 					// 	videoIframe.setAttribute('src', videoSRC);

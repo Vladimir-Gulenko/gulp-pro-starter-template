@@ -18,13 +18,19 @@
 			#{$self}_line &{
 				display: flex;
 				justify-content: center;
+				@include xOffset('margin', - getComp(gutter));
 			}
 		}
 		&__row{
 			#{$self}_line &{
 				flex: 1;
-				padding-left: 15px;
-				padding-right: 15px;
+				@include xOffset('padding', getComp(gutter));
+			}
+		}
+		#{$self}_line &{
+			&__submit{
+				height: 100%;
+				width: 100%;
 			}
 		}
 	}
@@ -65,7 +71,7 @@
 			@include input-default();
 			border: 1px solid #ddd;
 			&:focus{
-				border-color: setColor('brand-1');
+				border-color: $color-brand-1;
 				@include placeholder{
 					color: transparent;
 				}

@@ -19,11 +19,11 @@
         <link href="../css/docs/prism.css" rel="stylesheet">
         <script src="../js/main-vanilla.js"></script>
         <script src="../js/docs/prism.min.js"></script>
-        <title>Unit Test - Index</title>
-        <meta name="application-name" content="Unit Test - Index">
-        <meta property="og:title" content="Unit Test - Index">
-        <meta itemprop="headline" content="Unit Test - Index">
-        <meta property="og:site_name" content="Unit Test - Index">
+        <title>Unit Test - Form</title>
+        <meta name="application-name" content="Unit Test - Form">
+        <meta property="og:title" content="Unit Test - Form">
+        <meta itemprop="headline" content="Unit Test - Form">
+        <meta property="og:site_name" content="Unit Test - Form">
   </head>
   <body>
     <div class="site" id="page">
@@ -31,7 +31,7 @@
                     <section class="vdocs">
                                       <div class="vdocs__intro">
                                         <div class="vcontainer">
-                                                              <div class="vdocs__intro-title">Modal
+                                                              <div class="vdocs__intro-title">Form
                                                               </div>
                                                               <div class="vdocs__intro-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!
                                                               </div>
@@ -41,32 +41,40 @@
                         <div class="vrow">
                                           <div class="vdocs__content vcol-12 vcol-sm-8">
                                                             <div class="vdocs__group">
-                                                                                  <div class="vdocs__group-title">Modal example
+                                                                                  <div class="vdocs__group-title">Block Form
                                                                                   </div>
-                                                                          <button class="vbtn" data-action="vmodal" data-open="#example-id">Open Modal
-                                                                          </button>
-                                                                          <div class="vmodal" id="example-id">
-                                                                                            <div class="vmodal__box vmodal__box_default">
-                                                                                                              <div class="vmodal__header">
-                                                                                                                                <p class="vmodal__title">Modal title
-                                                                                                                                </p>
-                                                                                                                                <button class="vmodal__close" data-close="vmodal">&times;
+                                                                          <form class="vform vform_block">
+                                                                                            <div class="vform__content">
+                                                                                                              <div class="vform__row"><input class="vform__control" name="vname" type="text" placeholder="Name"/>
+                                                                                                              </div>
+                                                                                                              <div class="vform__row"><input class="vform__control" name="vemail" type="email" placeholder="E-mail"/>
+                                                                                                              </div>
+                                                                                                              <div class="vform__row"><input class="vform__control" name="vphone" type="phone" placeholder="Phone"/>
+                                                                                                              </div>
+                                                                                                              <div class="vform__row">
+                                                                                                                                <button class="vform__submit vbtn vbtn_color-brand-1" type="submit">Submit
                                                                                                                                 </button>
                                                                                                               </div>
-                                                                                                              <div class="vmodal__body">
-                                                                                                                <p>Lorem....</p>
+                                                                                            </div>
+                                                                          </form>
+                                                            </div>
+                                                            <div class="vdocs__group">
+                                                                                  <div class="vdocs__group-title">Line Form
+                                                                                  </div>
+                                                                          <form class="vform vform_line">
+                                                                                            <div class="vform__content">
+                                                                                                              <div class="vform__row"><input class="vform__control" name="vname" type="text" placeholder="Name"/>
+                                                                                                              </div>
+                                                                                                              <div class="vform__row"><input class="vform__control" name="vemail" type="email" placeholder="E-mail"/>
+                                                                                                              </div>
+                                                                                                              <div class="vform__row"><input class="vform__control" name="vphone" type="phone" placeholder="Phone"/>
+                                                                                                              </div>
+                                                                                                              <div class="vform__row">
+                                                                                                                                <button class="vform__submit vbtn vbtn_color-brand-1" type="submit">Submit
+                                                                                                                                </button>
                                                                                                               </div>
                                                                                             </div>
-                                                                          </div>
-                                                                  <pre><code class="language-pug">
-                                                                      +b.BUTTON.vbtn(data-action="vmodal" data-open="#example-id") Open Modal
-                                                                      +b.vmodal#example-id
-                                                                      	+e.box._default
-                                                                      		+e.header
-                                                                      			+e.P.title Modal title
-                                                                      			+e.BUTTON.close(data-close="vmodal") &times;
-                                                                      		+e.body
-                                                                      			p Lorem...</code></pre>
+                                                                          </form>
                                                             </div>
                                           </div>
                                           <div class="vdocs__sidebar vcol-12 vcol-sm-4">

@@ -1,4 +1,7 @@
-@import '1.helpers/*';
+@import 'helpers/variables';
+@import 'helpers/maps';
+@import 'helpers/mixins';
+@import 'helpers/functions';
 
 @import 'base/reset';
 @import 'base/base';
@@ -8,19 +11,33 @@
 @import 'grid/*';
 
 // Layouts
-@import 'layouts/nav/*';
+
+@import 'layouts/nav/helpers';
+@import 'layouts/nav/nav';
+@import 'layouts/nav/menu';
+@import 'layouts/nav/item-effects';
+@import 'layouts/nav/item';
+@import 'layouts/nav/logo';
+@import 'layouts/nav/hamburger';
+@import 'layouts/nav/addition';
+
 @import 'layouts/header/header';
 @import 'layouts/footer/footer';
 
 // Section
-@import 'parts/sections/*';
+@import 'sections/*';
 
 // Pages
-//@import 'parts/pages/*';
+//@import 'pages/*';
 
 //@import "dev/loader";
-@import 'components/classes/*';
-@import 'components/button/*';
+@import 'utilities/*';
+
+// Button
+@import 'components/button/helpers';
+@import 'components/button/effects';
+@import 'components/button/button';
+
 @import 'components/form/*';
 @import 'components/list/*';
 @import 'components/text/*';
@@ -28,10 +45,7 @@
 //@import 'fontawesome/font-awesome';
 //@import 'vendor/tabs';
 @import 'vendor/modal/*';
-@import 'vendor/carousel';
-@import 'vendor/collapse';
-@import 'vendor/fontawesome/font-awesome';
+//@import 'vendor/carousel';
+//@import 'vendor/collapse';
+//@import 'vendor/fontawesome/font-awesome';
 //@import 'vendor/animations';
-
-
-//@import 'unit-test/unit-test';

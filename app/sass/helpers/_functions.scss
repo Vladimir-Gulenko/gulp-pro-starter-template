@@ -1,6 +1,6 @@
 /// Getting the color value from the map
 /// @access public
-/// @param {String} $color - color name 
+/// @param {String} $color - Color name 
 /// @return {String}
 /// @require $colors
 @function setColor($color, $tone: 'base'){
@@ -16,7 +16,7 @@
 
 /// Getting the z-index value from the layer name
 /// @access public
-/// @param {String} $layer - Имя слоя
+/// @param {String} $layer - Name of layer
 /// @return {Number}
 /// @require $z-indexes
 @function z($layer){

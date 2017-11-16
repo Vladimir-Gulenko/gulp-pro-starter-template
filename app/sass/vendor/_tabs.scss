@@ -49,9 +49,9 @@
     }
     @at-root{
       %effectTab{
-        color: setColor('brand-1');
+        color: $color-brand-1;
         &:after{
-          background-color: setColor('brand-1', 'light');
+          background-color: lighten($color-brand-1, 15%);
           transform: none;
         }
       }
@@ -68,7 +68,7 @@
   @include resp-min(sm){
     &-list{
       padding-bottom: 10px;
-      border-bottom: 5px solid setColor(dark, light);
+      border-bottom: 5px solid $color-black;
       li{
         display: inline-block;
       }

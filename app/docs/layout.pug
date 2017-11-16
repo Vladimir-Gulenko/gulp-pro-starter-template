@@ -12,8 +12,10 @@ html(lang="ru")
 			+css("//fonts.googleapis.com/css?family=Roboto:300,400,700,900&amp;subset=cyrillic")
 			+css("../css/style.css")
 			+css('../css/docs/docs.css')
+			+css('../css/docs/prism.css')
 		block js
 			+js("../js/main-vanilla.js")
+			+js("../js/docs/prism.min.js")
 		block head
 	body
 		block nav
@@ -24,6 +26,7 @@ html(lang="ru")
 					+e.intro
 						.vcontainer
 							block intro
+					block special
 					.vcontainer
 						.vrow
 							+e.content.vcol-12.vcol-sm-8
@@ -37,4 +40,6 @@ html(lang="ru")
 										+e.A.sidebar-list-item-link(href="modal.html") Modal
 									+e.LI.sidebar-list-item
 										+e.A.sidebar-list-item-link(href="title.html") Title
+									+e.LI.sidebar-list-item
+										+e.A.sidebar-list-item-link(href="form.html") Form
 			block footer

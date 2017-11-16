@@ -2,10 +2,10 @@
 .#{$themeRow}{
   @include xOffset('margin', - getComp(gutter));
 }
-// .cf{
-//   position: relative;
-//   @include cf();
-// }
+.vclearfix{
+  position: relative;
+  @include cf();
+}
 @if getComp(flex) == true{
   .#{$themePrefix}flex{
     display: flex;

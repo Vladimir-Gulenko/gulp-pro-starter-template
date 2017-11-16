@@ -10,13 +10,4 @@
       margin-bottom: 45px;
     }
   }
-  &-big,
-  &-extra{
-    margin-bottom: 60px;
-  }
-  @include resp-min(sm){
-    &-extra{
-      margin-bottom: 90px;
-    }
-  }
 }

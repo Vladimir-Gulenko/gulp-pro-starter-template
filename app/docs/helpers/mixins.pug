@@ -1,6 +1,10 @@
 include ../../pug/bem/index
-mixin intro(title, description)
+mixin docs-intro(title, description)
 	+e.intro-title=title
 	+e.intro-description=description
-mixin title(title)
-	+e.section-title=title
+mixin docs-group-title(title)
+	+e.group-title=title
+mixin docs-code(language)
+	pre
+		code(class='language-' + language)
+			block

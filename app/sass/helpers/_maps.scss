@@ -23,30 +23,6 @@ $container-width: (
 	lg 					: 1170px
 );
 
-/// All colors
-$colors: (
-	'brand-1': (
-		'base'	: $color-brand-1,
-		'light' : lighten($color-brand-1, 15%)
-	),
-	'brand-2': (
-		'base'	: $color-brand-2,
-		'light' : lighten($color-brand-2, 15%)
-	),
-	'menu': (
-		'base'  : $color-responsive-menu,
-		'light' : lighten($color-responsive-menu, 5%)
-	),
-	'dark': (
-		'base' 	: #191919,
-		'black' : #000,
-		'light' : #f3f3f3
-	),
-	'white': (
-		'base'  : #fff
-	)
-);
-
 
 /// Sizes for elements.
 $sizes: (

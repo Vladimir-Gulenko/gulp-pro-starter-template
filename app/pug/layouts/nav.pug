@@ -14,19 +14,19 @@ include ../helpers/mixins
 							span Line2
 							span Line3
 						//+e.SPAN.text Menu
-					.inline-block
-						img(src="img/logo.png" alt="")
+					+e.logo-content
+						+e.logo-content-img(src="img/logo.png" alt="")
 				+e.NAV.menu.vcol-12.vcol-md-6#navigation
 					ul
 						for item in navigation
 							+menu-item('true', item.link, item.name)
 						+menu-item
 							+b.BUTTON.vbtn._navigation(data-action="v-modal" data-open="#form") Button
-				+e.text.vcol-4.vcol-md-3#js-nav-text
-					+e.text-toggle.js-vnav-toggle
+				+e.addition.vcol-4.vcol-md-3#js-vnav-addition
+					+e.addition-toggle#js-vnav-toggle
 						span
 						span
 						span
-					+e.text-links.js-vnav-links
-						+e.A.text-links-inner +99 999 999 99
-						+e.A.text-links-inner._hidden +99 999 999 99
+					+e.addition-links.js-vnav-links
+						+e.A.addition-link +99 999 999 99
+						+e.A.addition-link._hidden +99 999 999 99

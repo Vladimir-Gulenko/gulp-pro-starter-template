@@ -8,10 +8,10 @@
 		text-decoration: none;
 	}
 	@include resp-max(md){
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 		a{
-			padding: 15px;
-			color: setColor('white');
+			padding: 10px 15px;
+			color: $color-white;
 		}
 	}
 	@include resp-min(md){

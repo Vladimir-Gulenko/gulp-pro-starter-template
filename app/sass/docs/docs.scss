@@ -1,13 +1,17 @@
-@import '../1.helpers/*';
+@import '../helpers/variables';
+@import '../helpers/maps';
+@import '../helpers/mixins';
+@import '../helpers/functions';
+
 .vdocs{
 	&__intro{
 		padding-top: 90px;
 		padding-bottom: 90px;
 		margin-bottom: 45px;
-		background-color: setColor('brand-1');
+		background-color: $color-brand-1;
 		color: #fff;
 		&-title{
-			font-size: 60px;
+			font-size: 50px;
 			font-weight: bold;
 		}
 		&-description{
@@ -17,29 +21,24 @@
 	&__section{
 		margin-bottom: 30px;
 		padding-bottom: 30px;
-		&-title{
-			position: relative;
-			margin-bottom: 30px;
-			padding-bottom: 15px;
-			font-size: 20px;
-			color: setColor('brand-1');
-			&:before{
-				content: "";
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 45px;
-				height: 2px;
-				background-color: setColor('brand-1');
-			}
-		}
 	}
 	&__group{
-		margin-top: 30px;
+		
 		margin-bottom: 30px;
 		padding-bottom: 30px;
 		&:not(:last-child){
 			border-bottom: 1px solid #e4e4e4;
+		}
+		&:not(:first-child){
+			margin-top: 30px;
+		}
+		&-title{
+			position: relative;
+			padding-left: 30px;
+			margin-bottom: 15px;
+			font-size: 25px;
+			color: $color-brand-1;
+			font-weight: bold;
 		}
 	}
 	&__sidebar{
@@ -55,7 +54,7 @@
 					padding: 5px 0;
 					transition: all ease 0.5s;
 					&:hover{
-						color: setColor('brand-1');
+						color: $color-brand-1;
 					}
 				}
 			}

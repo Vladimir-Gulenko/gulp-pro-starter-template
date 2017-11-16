@@ -77,18 +77,15 @@
 		}
 	}
 	&_default input[type="radio"] + &__indicator{
-		border-color: setColor('brand-1');
+		border-color: $color-brand-1;
 		&:before{
-			background-color: setColor('brand-1');
+			background-color: $color-brand-1;
 		}
 	}
 	&_default input[type="checkbox"] + &__indicator{
-		border-color: setColor('brand-1');
+		border-color: $color-brand-1;
 		&:before{
-			border-color: setColor('brand-1');
+			border-color: $color-brand-1;
 		}
-		// &:before{
-		// 	background-color: setColor(main);
-		// }
 	}
 }

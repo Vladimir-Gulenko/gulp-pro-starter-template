@@ -1,4 +1,4 @@
-@mixin linkEffect1($color: setColor('brand-1')){
+@mixin linkEffect1($color: $color-brand-1){
   &:after{
     @include pseudo();
     @include transition();
@@ -16,7 +16,7 @@
   }
 }
 
-@mixin linkEffect2($color: setColor('brand-1')){
+@mixin linkEffect2($color: $color-brand-1){
   &:before,
   &:after{
     @include pseudo();
@@ -45,7 +45,7 @@
   }
 }
 
-@mixin linkEffect2($color: setColor('brand-1')){
+@mixin linkEffect2($color: $color-brand-1){
   &:after{
     @include pseudo();
     @include transition();
@@ -65,7 +65,7 @@
     }
   }
 }
-@mixin linkEffect3($color: setColor('brand-1')){
+@mixin linkEffect3($color: $color-brand-1){
   &:before,
   &:after{
     @include pseudo();
