@@ -95,7 +95,7 @@ b,
 }
 
 /* -----------------------------------------------------------------------------
-  COLUMNS
+	COLUMNS
 ----------------------------------------------------------------------------- */
 .vcol-1 {
   max-width: 8.33333%;
@@ -678,7 +678,7 @@ b,
 }
 
 /* -----------------------------------------------------------------------------
-  COLUMNS
+	COLUMNS
 ----------------------------------------------------------------------------- */
 .vcontainer {
   position: relative;
@@ -768,8 +768,7 @@ b,
 .vvisible-lg,
 .vvisible-md,
 .vvisible-sm,
-.vvisible-xs,
-.vvisible-exs {
+.vvisible-xs {
   display: none !important;
 }
 
@@ -809,6 +808,9 @@ b,
   }
 }
 
+/* -----------------------------------------------------------------------------
+  HIDDEN AND VISIBLE UTILITIES
+----------------------------------------------------------------------------- */
 .vfixed {
   position: fixed;
   left: 0;
@@ -1182,14 +1184,6 @@ b,
   z-index: 1;
 }
 
-.bg-brand-1 {
-  background-color: #28a5f5;
-}
-
-.bg-brand-2 {
-  background-color: #f00;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -1220,6 +1214,14 @@ b,
 
 .color-black {
   color: #000;
+}
+
+.bg-brand-1 {
+  background-color: #28a5f5;
+}
+
+.bg-brand-2 {
+  background-color: #f00;
 }
 
 .offset-static-xs {
@@ -1384,9 +1386,10 @@ b,
   padding: 10px 16px;
   overflow: hidden;
   font-size: 14px;
-  line-height: 1.3;
+  font-size: 18px;
+  line-height: 1.4;
   text-decoration: none;
-  border: 0;
+  border: none;
   -webkit-border-radius: 0;
   border-radius: 0;
   outline: none;
@@ -1487,125 +1490,6 @@ b,
 
 .vbtn_border-brand-1:before {
   background-color: #28a5f5;
-}
-
-/* -----------------------------------------------------------------------------
-  CHECKBOX & RADIO COMPONENTS
------------------------------------------------------------------------------ */
-.control__indicator, .control__indicator:before {
-  -webkit-transition: all ease .3s;
-  -o-transition: all ease .3s;
-  transition: all ease .3s;
-}
-
-.control {
-  position: relative;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.control-group {
-  position: relative;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.control__text {
-  display: inline-block;
-  padding-left: 40px;
-  font-size: 18px;
-  vertical-align: middle;
-}
-
-.control__indicator {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 25px;
-  height: 25px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.control__indicator:before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  content: "";
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-}
-
-.control input[type="checkbox"],
-.control input[type="radio"] {
-  position: absolute;
-  visibility: hidden;
-}
-
-input[type="radio"] + .control__indicator {
-  border-style: solid;
-  border-width: 1px;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-}
-
-input[type="radio"] + .control__indicator:before {
-  width: 50%;
-  height: 50%;
-  margin-top: -25%;
-  margin-left: -25%;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-}
-
-input[type="radio"]:checked + .control__indicator:before {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-input[type="checkbox"] + .control__indicator {
-  border-style: solid;
-  border-width: 1px;
-}
-
-input[type="checkbox"] + .control__indicator:before {
-  top: 4px;
-  left: 9px;
-  width: 6px;
-  height: 13px;
-  border-style: solid;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(0deg) scale(0);
-  -ms-transform: rotate(0deg) scale(0);
-  transform: rotate(0deg) scale(0);
-}
-
-input[type="checkbox"]:checked + .control__indicator:before {
-  -webkit-transform: rotate(45deg) scale(1);
-  -ms-transform: rotate(45deg) scale(1);
-  transform: rotate(45deg) scale(1);
-}
-
-.control_default input[type="radio"] + .control__indicator {
-  border-color: #28a5f5;
-}
-
-.control_default input[type="radio"] + .control__indicator:before {
-  background-color: #28a5f5;
-}
-
-.control_default input[type="checkbox"] + .control__indicator {
-  border-color: #28a5f5;
-}
-
-.control_default input[type="checkbox"] + .control__indicator:before {
-  border-color: #28a5f5;
 }
 
 .vform {
@@ -1728,6 +1612,125 @@ input[type="checkbox"]:checked + .control__indicator:before {
   cursor: pointer;
 }
 
+/* -----------------------------------------------------------------------------
+  CHECKBOX & RADIO COMPONENTS
+----------------------------------------------------------------------------- */
+.control__indicator, .control__indicator:before {
+  -webkit-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  transition: all ease .3s;
+}
+
+.control {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.control-group {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.control__text {
+  display: inline-block;
+  padding-left: 40px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.control__indicator:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.control input[type="checkbox"],
+.control input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+input[type="radio"] + .control__indicator {
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+
+input[type="radio"] + .control__indicator:before {
+  width: 50%;
+  height: 50%;
+  margin-top: -25%;
+  margin-left: -25%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+
+input[type="radio"]:checked + .control__indicator:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+input[type="checkbox"] + .control__indicator {
+  border-style: solid;
+  border-width: 1px;
+}
+
+input[type="checkbox"] + .control__indicator:before {
+  top: 4px;
+  left: 9px;
+  width: 6px;
+  height: 13px;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+}
+
+input[type="checkbox"]:checked + .control__indicator:before {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+}
+
+.control_default input[type="radio"] + .control__indicator {
+  border-color: #28a5f5;
+}
+
+.control_default input[type="radio"] + .control__indicator:before {
+  background-color: #28a5f5;
+}
+
+.control_default input[type="checkbox"] + .control__indicator {
+  border-color: #28a5f5;
+}
+
+.control_default input[type="checkbox"] + .control__indicator:before {
+  border-color: #28a5f5;
+}
+
 .list {
   font-size: 15px;
   list-style: none;
@@ -1834,6 +1837,46 @@ input[type="checkbox"]:checked + .control__indicator:before {
   .vtitle-lg {
     font-size: 60px;
   }
+}
+
+.vtabs__list {
+  margin-bottom: 30px;
+  font-size: 0;
+  text-align: center;
+}
+
+.vtabs__list-item {
+  display: inline-block;
+}
+
+.vtabs__list-item-link {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  font-size: 18px;
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: 2px solid #eaeaea;
+  -webkit-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+.vtabs__list-item-link:hover {
+  background-color: #eaeaea;
+}
+
+.vtabs__list-item.active .vtabs__list-item-link {
+  color: #28a5f5;
+}
+
+.vtabs__content-inner {
+  display: none;
+}
+
+.vtabs__content-inner.active {
+  display: block;
 }
 
 .vmodal, .vmodal_showing, .vmodal__box {
@@ -2031,4 +2074,39 @@ input[type="checkbox"]:checked + .control__indicator:before {
 .vmodal-open {
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.js-collapse {
+  margin-bottom: 30px;
+}
+
+.js-collapse__group:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.js-collapse__group-header {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eaeaea;
+  -webkit-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+.js-collapse__group-header:hover {
+  background-color: rgba(40, 165, 245, .1);
+}
+
+.js-collapse__group-title {
+  font-weight: bold;
+}
+
+.js-collapse__group-body {
+  display: none;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.js-collapse__group.active .js-collapse__group-header {
+  border-bottom-color: #28a5f5;
 }

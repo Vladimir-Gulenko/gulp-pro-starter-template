@@ -1,6 +1,16 @@
 /* -----------------------------------------------------------------------------
   HIDDEN AND VISIBLE UTILITIES
 ----------------------------------------------------------------------------- */
+// Hide and show elements.
+    @mixin visibility($visibility){
+      .#{$themePrefix}hidden-#{$visibility}{
+        display: none !important;
+      }
+      .#{$themePrefix}visible-#{$visibility}{
+        display: block !important;
+      }
+    }
+
 .#{$themePrefix}hidden,
 %vvisible{
   display: none !important;
@@ -26,3 +36,6 @@
 @include resp-max(sm){
   @include visibility(xs);
 }
+/* -----------------------------------------------------------------------------
+  HIDDEN AND VISIBLE UTILITIES
+----------------------------------------------------------------------------- */

@@ -1,3 +1,26 @@
+/// Sizes for elements.
+$sizes: (
+	'vtitle-xs': (
+		xs:   18px
+	),
+	'vtitle-sm': (
+		sm:   20px,
+		md:   30px,
+		lg:   40px
+	),
+	'vtitle-md': (
+		sm:   30px,
+		md:   40px,
+		lg:   50px
+	),
+	'vtitle-lg': (
+		sm:   40px,
+		md:   50px,
+		lg:   60px
+	)
+);
+
+
 %vtitle-default{
 	margin-top: 10px;
 	margin-bottom: 15px;

@@ -19,11 +19,13 @@
         <link href="../css/docs/prism.css" rel="stylesheet">
         <script src="../js/vanilla.main.js"></script>
         <script src="../js/docs/prism.min.js"></script>
-        <title>Unit Test - Form</title>
-        <meta name="application-name" content="Unit Test - Form">
-        <meta property="og:title" content="Unit Test - Form">
-        <meta itemprop="headline" content="Unit Test - Form">
-        <meta property="og:site_name" content="Unit Test - Form">
+        <title>Unit Test - Collapse</title>
+        <meta name="application-name" content="Unit Test - Collapse">
+        <meta property="og:title" content="Unit Test - Collapse">
+        <meta itemprop="headline" content="Unit Test - Collapse">
+        <meta property="og:site_name" content="Unit Test - Collapse">
+        <script src="../js/lib/jquery.min.js"></script>
+        <script src="../js/jquery.main.js"></script>
   </head>
   <body>
     <div class="site" id="page">
@@ -31,7 +33,7 @@
                     <section class="vdocs">
                                       <div class="vdocs__intro">
                                         <div class="vcontainer">
-                                                              <div class="vdocs__intro-title">Form
+                                                              <div class="vdocs__intro-title">Collapse
                                                               </div>
                                                               <div class="vdocs__intro-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!
                                                               </div>
@@ -41,40 +43,37 @@
                         <div class="vrow">
                                           <div class="vdocs__content vcol-12 vcol-sm-8">
                                                             <div class="vdocs__group">
-                                                                                  <div class="vdocs__group-title">Block Form
+                                                                                  <div class="vdocs__group-title">Collapse
                                                                                   </div>
-                                                                          <form class="vform vform_block">
-                                                                                            <div class="vform__content">
-                                                                                                              <div class="vform__row"><input class="vform__control" name="vname" type="text" placeholder="Name"/>
+                                                                          <div class="js-collapse">
+                                                                                            <div class="js-collapse__group active">
+                                                                                                              <div class="js-collapse__group-header">
+                                                                                                                                <p class="js-collapse__group-title">Title
+                                                                                                                                </p>
                                                                                                               </div>
-                                                                                                              <div class="vform__row"><input class="vform__control" name="vemail" type="email" placeholder="E-mail"/>
-                                                                                                              </div>
-                                                                                                              <div class="vform__row"><input class="vform__control" name="vphone" type="phone" placeholder="Phone"/>
-                                                                                                              </div>
-                                                                                                              <div class="vform__row">
-                                                                                                                                <button class="vform__submit vbtn vbtn_color-brand-1" type="submit">Submit
-                                                                                                                                </button>
+                                                                                                              <div class="js-collapse__group-body">
+                                                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis assumenda quod numquam rem dolores tenetur veritatis unde ratione. Voluptas modi consequuntur delectus officiis fugit unde, minus dolore ad molestiae nulla, facilis, vero voluptatibus dicta cumque repellat sunt laboriosam ex blanditiis.</p>
                                                                                                               </div>
                                                                                             </div>
-                                                                          </form>
-                                                            </div>
-                                                            <div class="vdocs__group">
-                                                                                  <div class="vdocs__group-title">Line Form
-                                                                                  </div>
-                                                                          <form class="vform vform_line">
-                                                                                            <div class="vform__content">
-                                                                                                              <div class="vform__row"><input class="vform__control" name="vname" type="text" placeholder="Name"/>
+                                                                                            <div class="js-collapse__group">
+                                                                                                              <div class="js-collapse__group-header">
+                                                                                                                                <p class="js-collapse__group-title">Title
+                                                                                                                                </p>
                                                                                                               </div>
-                                                                                                              <div class="vform__row"><input class="vform__control" name="vemail" type="email" placeholder="E-mail"/>
-                                                                                                              </div>
-                                                                                                              <div class="vform__row"><input class="vform__control" name="vphone" type="phone" placeholder="Phone"/>
-                                                                                                              </div>
-                                                                                                              <div class="vform__row">
-                                                                                                                                <button class="vform__submit vbtn vbtn_color-brand-1" type="submit">Submit
-                                                                                                                                </button>
+                                                                                                              <div class="js-collapse__group-body">
+                                                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit libero ad illo iste ullam, officia unde asperiores quam. Quo, dolore, inventore. Itaque magni aut suscipit quaerat culpa, voluptates atque labore et dignissimos amet velit corrupti consequatur, temporibus voluptatem ratione, ullam.</p>
                                                                                                               </div>
                                                                                             </div>
-                                                                          </form>
+                                                                                            <div class="js-collapse__group">
+                                                                                                              <div class="js-collapse__group-header">
+                                                                                                                                <p class="js-collapse__group-title">Title
+                                                                                                                                </p>
+                                                                                                              </div>
+                                                                                                              <div class="js-collapse__group-body">
+                                                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas repudiandae, facilis a consequuntur aspernatur! At, saepe. Sapiente ad ullam rem pariatur eligendi saepe quo repellendus dolor reprehenderit quaerat nemo doloremque corporis iste deserunt, laborum mollitia, nisi eos fugiat optio debitis.</p>
+                                                                                                              </div>
+                                                                                            </div>
+                                                                          </div>
                                                             </div>
                                           </div>
                                           <div class="vdocs__sidebar vcol-12 vcol-sm-4">
