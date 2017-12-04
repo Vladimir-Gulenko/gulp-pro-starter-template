@@ -1,21 +1,22 @@
 /* -----------------------------------------------------------------------------
 	COLUMNS
 ----------------------------------------------------------------------------- */
+$themeColumn: 'col';
 
 @mixin flexColumnWidth($value){
 	flex-basis: $value;
 	max-width: $value;
 }
-@mixin make-column($class: null,$push: "push",$pull: "pull",$offset: "offset"){
+@mixin make-column($class: null, $push: "push", $pull: "pull", $offset: "offset"){
 	@for $i from 1 through getComp(columns){
 		$defaultValue: ( getComp(width)/getComp(columns) ) * $i;
 		@if getComp(flex) == true{     
 			@if $class != null {
-				.#{$themeColumn}-#{$class}-#{$i}{
+				@include b($themeColumn + '-' + #{$class} + '-' + #{$i}){
 					@include flexColumnWidth($defaultValue);
 				}
 			}@else{
-				.#{$themeColumn}-#{$i}{
+				@include b($themeColumn + '-' + #{$i}){
 					@include flexColumnWidth($defaultValue);
 				}
 			}
@@ -64,13 +65,10 @@
 		@include xOffset('padding', getComp(gutter));
 	}
 }@else{
-	%global-block{
+	[class*=#{$themeColumn}]{
 		position: relative;
 		min-height: 1px;
 		@include xOffset('padding', getComp(gutter));
-	}
-	[class*=#{$themeColumn}]{
-		@extend %global-block;
 		float: left;
 	}
 }

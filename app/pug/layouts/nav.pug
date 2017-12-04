@@ -3,11 +3,11 @@ include ../helpers/config
 include ../helpers/data
 include ../helpers/mixins
 
-+b.vfixed._md-top
-	+b.vnav._style
-		+e.container.vcontainer
-			+e.row.vrow.vflex-y-center
-				+e.logo.vcol-8.vcol-md-3
++b.fixed._md-top
+	+b.nav._style
+		+e.container.container
+			+e.row.row.flex-y-center
+				+e.logo.col-8.col-md-3
 					+b.vhamburger(type="button" id="js-vnav__btn")
 						+e.SPAN.lines
 							span Line1
@@ -16,13 +16,13 @@ include ../helpers/mixins
 						//+e.SPAN.text Menu
 					+e.logo-content
 						+e.logo-content-img(src="img/logo.png" alt="")
-				+e.NAV.menu.vcol-12.vcol-md-6#navigation
+				+e.NAV.menu.col-12.col-md-6#navigation
 					ul
 						for item in navigation
 							+menu-item('true', item.link, item.name)
 						+menu-item
-							+b.BUTTON.vbtn._navigation(data-action="v-modal" data-open="#form") Button
-				+e.addition.vcol-4.vcol-md-3#js-vnav-addition
+							+b.BUTTON.btn._navigation(data-action="vmodal" data-open="#form") Button
+				+e.addition.col-4.col-md-3#js-vnav-addition
 					+e.addition-toggle#js-vnav-toggle
 						span
 						span

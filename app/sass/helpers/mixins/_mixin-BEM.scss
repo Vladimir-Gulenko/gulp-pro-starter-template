@@ -1,0 +1,42 @@
+// BEM Structure
+	
+	// Block
+	// Encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.
+	@mixin b($name){
+		.#{$themePrefix}#{$name}{
+			@content;
+		}
+	}
+
+	// Element
+	// Parts of a block and have no standalone meaning. Any element is semantically tied to its block.
+	@mixin e($name){
+		&__#{$name}{
+			@content;
+		}
+	}
+
+	@mixin ee($name){
+		&-#{$name}{
+			@content;
+		}
+	}
+	
+	// Modifier
+	// Flags on blocks or elements. Use them to change appearance, behavior or state.
+	@mixin m($name){
+		&_#{$name}{
+			@content;
+		}
+	}
+
+	// EXAMPLE USAGE
+	// @include b('block'){
+	// 	background-color: #ddd;
+	// 	@include e('element'){
+	// 		color: #f00;
+	// 		@include m('modificator'){
+	// 			color: #ddd;
+	// 		}
+	// 	}
+	// }

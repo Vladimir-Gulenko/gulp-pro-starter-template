@@ -1,6 +1,6 @@
-.#{$themeNav}{
+@include b($themeNav){
 	$self: &;
-	&__addition{
+	@include e('addition'){
 		position: relative;
 		display: inline-block;
 		color: $color-black;

@@ -1,4 +1,4 @@
-.#{$themeButtonEffect}{
+@include b('effect'){
 	&:before{
     @include pseudo();
     z-index: -1;

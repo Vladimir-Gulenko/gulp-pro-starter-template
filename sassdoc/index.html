@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Gulp-start-template - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Gulp-start-template - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>gulp start template</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Gulp-start-template - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="sizes" data-type="variable"><a href="#undefined-variable-sizes">sizes</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="themeContainer" data-type="variable"><a href="#undefined-variable-themeContainer">themeContainer</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="container-width" data-type="variable"><a href="#undefined-variable-container-width">container-width</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="grid-system" data-type="variable"><a href="#undefined-variable-grid-system">grid-system</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="breakpoints" data-type="variable"><a href="#undefined-variable-breakpoints">breakpoints</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="z-indexes" data-type="variable"><a href="#undefined-variable-z-indexes">z-indexes</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="setColor" data-type="function"><a href="#undefined-function-setColor">setColor</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="z" data-type="function"><a href="#undefined-function-z">z</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="undefined-variable-sizes"><h3 class="item__heading"><a class="item__name" href="#variable-sizes">sizes</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$sizes: (
+	&#39;vtitle-xs&#39;: (
+		xs:   18px
+	),
+	&#39;vtitle-sm&#39;: (
+		sm:   20px,
+		md:   30px,
+		lg:   40px
+	),
+	&#39;vtitle-md&#39;: (
+		sm:   30px,
+		md:   40px,
+		lg:   50px
+	),
+	&#39;vtitle-lg&#39;: (
+		sm:   40px,
+		md:   50px,
+		lg:   60px
+	)
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sizes for elements.</p></div></section><section class="main__item container item" id="undefined-variable-themeContainer"><h3 class="item__heading"><a class="item__name" href="#variable-themeContainer">themeContainer</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$themeContainer: &#39;container&#39;;</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Container width.</p></div></section><section class="main__item container item" id="undefined-variable-container-width"><h3 class="item__heading"><a class="item__name" href="#variable-container-width">container-width</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$container-width: (
+  sm          : 750px,
+  md          : 970px,
+  lg          : 1170px
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Container width.</p></div></section><section class="main__item container item" id="undefined-variable-grid-system"><h3 class="item__heading"><a class="item__name" href="#variable-grid-system">grid-system</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$grid-system: (
+	menuExists 						: true,
+	columns 							: 12,
+	flex 									: true,
+	width 								: 100%,
+	gutter 								: 15px
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Settings grid.</p></div></section><section class="main__item container item" id="undefined-variable-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-breakpoints">breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$breakpoints: (
+	lg 				: 1200px,
+	md 				: 1025px,
+	sm 				: 768px,
+	xs 				: 480px
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Media-queries.</p></div></section><section class="main__item container item" id="undefined-variable-z-indexes"><h3 class="item__heading"><a class="item__name" href="#variable-z-indexes">z-indexes</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$z-indexes: (
+	&#39;loader__spin&#39;		: 1001,
+	&#39;loader&#39;					: 1000,
+	&#39;modal&#39;						: 1000,
+	&#39;modal__overlay&#39;	: 999,
+	&#39;fixed&#39;						: 10,
+	&#39;default&#39;					: 1,
+	&#39;below&#39;						: -1
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Z-indexes.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-z"><code>z</code></a></li></ul></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-setColor"><h3 class="item__heading"><a class="item__name" href="#function-setColor">setColor</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function setColor($color) { 
+  @if map-has-key($colors, $color){
+  	@return map-get(map-get($colors, $color), $tone);
+  }@else{
+  	@error $error-color + &#39;&#39;#{$color}&#39;&#39;;
+  }
+ }" data-collapsed="@function setColor($color) { ... }"><code>@function setColor($color) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Getting the color value from the map</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Color name</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code></div></section><section class="main__item container item" id="undefined-function-z"><h3 class="item__heading"><a class="item__name" href="#function-z">z</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function z($layer) { 
+	@if map-has-key($z-indexes, $layer){
+		@return map-get($z-indexes, $layer);
+	}@else{
+		@error &#39;No layer with name &#39;#{$layer}&#39; in $z-indexes. The layer must be one of the &#39;#{map-keys($z-indexes)}&#39; .&#39;;
+	}
+ }" data-collapsed="@function z($layer) { ... }"><code>@function z($layer) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Getting the z-index value from the layer name</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$layer</code></th><td data-label="desc"><p>Name of layer</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>No layer with name</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-z-indexes"><code>z-indexes</code></a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Gulp-start-template</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

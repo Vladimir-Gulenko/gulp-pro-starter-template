@@ -16,11 +16,11 @@
   @include transition();
   @extend .font-weight-bold !optional;
 }
-.#{$themeButton}{
+@include b('btn'){
   @extend %btn-placeholder;
   &-group{
     font-size: 0;
-    .#{$themeButton}{
+    @include b('btn'){
       margin-right: 5px;
       margin-bottom: 5px;
     }

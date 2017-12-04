@@ -1,4 +1,5 @@
 // General functions
+	console.log(1);
 	function log(logText){
 		console.log(logText);
 	}

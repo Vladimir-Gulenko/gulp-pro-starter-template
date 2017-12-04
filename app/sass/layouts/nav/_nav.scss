@@ -1,5 +1,5 @@
-.#{$themeNav}{
-	&__row{
+@include b($themeNav){
+	@include e('row'){
 		justify-content: space-between;
 	}
 	@if ( getComp(menuExists) == true ){

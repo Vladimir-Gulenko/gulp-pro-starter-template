@@ -1,4 +1,4 @@
-.#{$themeForm}{
+@include b('form'){
 	$self: &;
 	width: 100%;
 	&__row{
@@ -45,7 +45,7 @@
 			bottom: 0;
 			height: 1px;
 			width: 0;
-			background-color: $color-modal-main;
+			background-color: $color-brand-1;
 			@include transition();
 		}
 		input:focus + &__line{
@@ -58,7 +58,7 @@
 				bottom: 0;
 				height: 1px;
 				width: 100%;
-				background-color: $color-modal-main;
+				background-color: $color-brand-1;
 			}
 		}
 		@include resp-min(xs){

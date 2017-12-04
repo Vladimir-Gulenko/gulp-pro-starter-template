@@ -1,6 +1,6 @@
-@import 'helpers/variables';
+@import 'helpers/variables/*';
 @import 'helpers/maps';
-@import 'helpers/mixins';
+@import 'helpers/mixins/*';
 @import 'helpers/functions';
 
 @import 'base/reset';
@@ -11,15 +11,15 @@
 @import 'grid/*';
 
 // Layouts
-
-@import 'layouts/nav/helpers';
+@import 'layouts/nav/nav-variables';
+@import 'layouts/nav/nav-fixed';
 @import 'layouts/nav/nav';
-@import 'layouts/nav/menu';
-@import 'layouts/nav/menu-item-effects';
-@import 'layouts/nav/menu-item';
-@import 'layouts/nav/logo';
-@import 'layouts/nav/hamburger';
-@import 'layouts/nav/addition';
+@import 'layouts/nav/nav-menu';
+@import 'layouts/nav/nav-menu-item-effects';
+@import 'layouts/nav/nav-menu-item';
+@import 'layouts/nav/nav-logo';
+@import 'layouts/nav/nav-hamburger';
+@import 'layouts/nav/nav-addition';
 
 @import 'layouts/header/header';
 @import 'layouts/footer/footer';
