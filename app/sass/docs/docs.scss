@@ -1,7 +1,8 @@
 @import '../helpers/variables/*';
 @import '../helpers/maps';
+@import '../helpers/mixins/BEM/*';
 @import '../helpers/mixins/*';
-@import '../helpers/functions';
+@import '../helpers/functions/*';
 
 .vdocs{
 	&__intro{

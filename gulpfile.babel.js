@@ -13,20 +13,20 @@ import browserSync 			from 'browser-sync';
 const server = browserSync.create();
 
 function reload(done) {
-  server.reload();
-  done();
+	server.reload();
+	done();
 }
 function serve(done) {
 	// Shows that run "watch" mode
 	global.watch = true;
 	
-  server.init({
-    server: {
-      baseDir: './app',
-      notify: true
-    }
-  });
-  done();
+	server.init({
+		server: {
+			baseDir: './app',
+			notify: true
+		}
+	});
+	done();
 }
 
 // PUG
@@ -61,7 +61,18 @@ gulp.src(['./package.json'])
 // SASS
 gulp.task('sass', () =>
 	gulp.src("app/sass/**/*.scss")
-		.pipe(sassdoc())
+		.pipe(sassdoc({
+			dest: 'sassdoc',
+			verbose: true,
+			display: {
+				access: ['public', 'private'],
+				alias: true,
+				watermark: true,
+			},
+			groups: {
+				undefined: 'All'
+			}
+		}))
 		.pipe(sassGlob())
 		.pipe(sass({
 			outputStyle: 'expanded'

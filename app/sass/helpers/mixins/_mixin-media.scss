@@ -1,4 +1,4 @@
-// Media Queries
+/// Media Queries
 @mixin resp-min($breakpoint, $breakpoints: $breakpoints){
 	$value: map-get($breakpoints,$breakpoint);
 	@if $value != null  {

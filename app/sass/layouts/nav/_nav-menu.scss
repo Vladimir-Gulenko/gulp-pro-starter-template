@@ -1,8 +1,8 @@
-.#{$themeNav}{
-	&__menu{
+@include b($themeNav){
+	@include e('menu'){
 		-webkit-overflow-scrolling:touch;
 		@include resp-max(md){
-			.#{$themeNav}_style &{
+			.v#{$themeNav}_style &{
 				transform: translateZ(0) translateX(-120%);
 				position: fixed;
 				left: 0;

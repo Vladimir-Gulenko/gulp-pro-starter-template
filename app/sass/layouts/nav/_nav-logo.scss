@@ -1,4 +1,4 @@
-.#{$themeNav}{
+@include b($themeNav){
 	&__logo{
 		font-size: 0;
 		&-content{
