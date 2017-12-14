@@ -20,7 +20,7 @@ $hamburger-line-height: 4px;
 			vertical-align: middle;
 		}
 		%hamburger-transition{
-			@include transition($tr-dur: $hamburger-transistion-duration);
+			@include transition($duration: $hamburger-transistion-duration);
 		}
 	}
 	margin-right: 15px;
@@ -33,9 +33,8 @@ $hamburger-line-height: 4px;
 	@extend %hamburger-transition;
 	@extend %hamburger-format;
 	&__lines{
-		position: relative;
-		width: $hamburger-width;
-		height: $hamburger-height;
+		@include relative();
+		@include size($hamburger-width, $hamburger-height);
 		text-indent: -9999px;
 		@extend %hamburger-format;
 		@extend %hamburger-transition;
@@ -83,7 +82,7 @@ $hamburger-line-height: 4px;
 			}
 		}
 	}
-	@include resp-min(md){
+	@include min(md){
 		display: none;
 	}
 }

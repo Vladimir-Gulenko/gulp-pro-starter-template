@@ -45,13 +45,13 @@
   }
   &_navigation{
     background-color: $color-responsive-menu-light;
-    @include resp-max(md){
+    @include max(md){
       padding: 15px;
       width: 100%;
       font-size: 18px;
       text-align: left;
     }
-    @include resp-min(md){
+    @include min(md){
       background-color: $color-brand-1;
     }
   }

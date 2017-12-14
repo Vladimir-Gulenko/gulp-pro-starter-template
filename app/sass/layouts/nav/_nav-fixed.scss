@@ -1,15 +1,14 @@
-$themeFixed: 'fixed';
-@include b($themeFixed){
+@include b('fixed'){
 	position: fixed;
 	width: 100%;
 	left: 0;
-	z-index: z('fixed');
-	@include resp-max(md){
+	z-index: z-index-index('fixed');
+	@include max(md){
 		& + .site{
 			margin-top: 56px;
 		}
 	}
-	@include resp-min(md){
+	@include min(md){
 		&_md{
 			&-top{
 				top: 0;

@@ -12,11 +12,11 @@ $themeColumn: 'col';
 		$defaultValue: ( getComp(width)/getComp(columns) ) * $i;
 		@if getComp(flex) == true{     
 			@if $class != null {
-				@include b($themeColumn + '-' + #{$class} + '-' + #{$i}){
+				@include b( unquote($themeColumn) - $class - $i ) {
 					@include flexColumnWidth($defaultValue);
 				}
 			}@else{
-				@include b($themeColumn + '-' + #{$i}){
+				@include b( unquote($themeColumn) - $i ) {
 					@include flexColumnWidth($defaultValue);
 				}
 			}
@@ -46,29 +46,29 @@ $themeColumn: 'col';
 }
 
 @include make-column();
-@include resp-min(xs){
+@include min(xs){
 	@include make-column(xs);
 }
-@include resp-min(sm){
+@include min(sm){
 	@include make-column(sm);
 }
-@include resp-min(md){
+@include min(md){
 	@include make-column(md);
 }
-@include resp-min(lg){
+@include min(lg){
 	@include make-column(lg);
 }
 @if getComp(flex) == true{
-	[class*=#{$themeColumn}]{
+	[class*=#{$themePrefix}#{$themeColumn}-]{
 		flex-grow: 0;
 		flex-shrink: 0;
-		@include xOffset('padding', getComp(gutter));
+		@include padding-x(getComp(gutter));
 	}
 }@else{
-	[class*=#{$themeColumn}]{
+	[class*=#{$themePrefix}#{$themeColumn}-]{
 		position: relative;
 		min-height: 1px;
-		@include xOffset('padding', getComp(gutter));
+		@include padding-x(getComp(gutter));
 		float: left;
 	}
 }

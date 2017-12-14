@@ -4,7 +4,7 @@
 		&-content{
 			display: inline-block;
 		}
-		@include resp-max(md){
+		@include max(md){
 			.#{$themeNav}_style &{
 				img{
 					vertical-align: middle;

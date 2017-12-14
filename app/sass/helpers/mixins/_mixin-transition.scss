@@ -1,4 +1,8 @@
-// Transition
-@mixin transition($tr-prop: all, $tr-time: ease, $tr-dur: .5s){
-	transition: $tr-prop $tr-time $tr-dur;
+/// Transition
+/// @param {String} $property [all] - Property
+/// @param {String} $ease [ease] - Effect
+/// @param {Duration} $duration [0.5s] - Time
+/// @author Vsevolod Kurochka
+@mixin transition($property: all, $ease: ease, $duration: 0.5s){
+	transition: $property $duration $ease;
 }

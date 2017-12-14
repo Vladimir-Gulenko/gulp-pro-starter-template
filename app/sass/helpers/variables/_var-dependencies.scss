@@ -1,9 +1,3 @@
-// Dependencies
-
-	// Wordpress
-
-		$wordpress: false;
-
-	// Naming of theme prefix
-
-		$themePrefix: 'v';
+/// Theme prefix
+/// @type String
+$themePrefix: 'v-';

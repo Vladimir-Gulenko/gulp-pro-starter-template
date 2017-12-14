@@ -6,31 +6,28 @@
 			@include rowOffset();
 		}
 	}
-	@include resp-max(sm){
+	@include max(sm){
 		&__row{
 			#{$self}_line &{
 				@include rowOffset();
 			}
 		}
 	}
-	@include resp-min(sm){
-		&__content{
-			#{$self}_line &{
+	@include min(sm){
+		#{$self}_line &{
+			&__content{
 				display: flex;
 				justify-content: center;
-				@include xOffset('margin', - getComp(gutter));
+				margin-left: - getComp(gutter);
+				margin-right: - getComp(gutter);
 			}
-		}
-		&__row{
-			#{$self}_line &{
+			&__row{
 				flex: 1;
-				@include xOffset('padding', getComp(gutter));
+				padding-left: getComp(gutter);
+				padding-right: getComp(gutter);
 			}
-		}
-		#{$self}_line &{
 			&__submit{
-				height: 100%;
-				width: 100%;
+				@include size(100%);
 			}
 		}
 	}
@@ -43,8 +40,7 @@
 			position: absolute;
 			left: 0;
 			bottom: 0;
-			height: 1px;
-			width: 0;
+			@include size(0, 1px);
 			background-color: $color-brand-1;
 			@include transition();
 		}
@@ -61,7 +57,7 @@
 				background-color: $color-brand-1;
 			}
 		}
-		@include resp-min(xs){
+		@include min(xs){
 			&__row{
 				margin-top: 30px;
 			}

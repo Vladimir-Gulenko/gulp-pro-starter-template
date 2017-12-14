@@ -1,11 +1,10 @@
-
 ////
 /// @author Vsevolod Kurochka
-/// @param {Name} $name - Element's classname
+/// @param {String} $name - Element's classname
 /// @group BEM
 ////
 
-/// Helper mixin that helps to create a `BLOCK` of BEM structure.
+/// Create an `BLOCK` of BEM structure.
 /// @example scss - Create `BLOCK` with className `.foo`
 	/// @include block('foo'){
 	///		font-size: 12px;
@@ -16,7 +15,7 @@
 	}
 }
 
-/// Helper mixin that helps to create a `ELEMENT` of BEM structure.
+/// Create an `ELEMENT` of BEM structure.
 /// @example scss - Create `BLOCK` with className `.foo`
 	/// @include block('foo'){
 	/// 	@include element('bar'){
@@ -29,11 +28,11 @@
 	}
 }
 
-/// Helper mixin that helps to create a `Modifier` of BEM structure.
+/// Create an `Modifier` of BEM structure.
 /// @example scss - Create `Modifier` for `BLOCK` with className `.foo`
-	/// @include b('foo'){
+	/// @include block('foo'){
 	/// 	color: #ddd;
-	/// 	@include m('baz'){
+	/// 	@include mod('baz'){
 	/// 		color: #f000;
 	/// 	}
 	/// }
@@ -43,7 +42,7 @@
 	}
 }
 
-/// Helper mixin that helps to create a `Element Of Element` of BEM structure/
+/// Create an `Element Of Element` of BEM structure
 /// @example scss - Create `Element Of Element`
 	/// @include block('nav'){
 	/// 	@include element('menu'){

@@ -9,7 +9,7 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	overflow: hidden;
-	z-index: z('modal');
+	z-index: z-index('modal');
 	backface-visibility: hidden;
 	-webkit-overflow-scrolling: touch;
 	outline: 0;

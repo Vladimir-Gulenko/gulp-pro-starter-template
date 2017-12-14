@@ -1,4 +1,8 @@
-// Mixin, who will take the font sizes from the map($sizes)
+/// Get font-size from map
+/// @access public
+/// @param {String} $fs-map - font-size
+/// @param {Map} $fs-breakpoints [$breakpoints] - font-size connected on breakpoints
+/// @author Vsevolod Kurochka
 @mixin fs($fs-map, $fs-breakpoints: $breakpoints){
 	$fs-map: map-get($sizes, $fs-map);
 	@each $fs-breakpoint, $fs-font-size in $fs-map{

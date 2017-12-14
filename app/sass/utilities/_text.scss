@@ -1,4 +1,4 @@
-.text{
+.#{$themePrefix}text{
 	&-uppercase{
 		text-transform: uppercase;
 	}
@@ -17,9 +17,4 @@
 	&-right{
 	 text-align: right;
 	}
-}
-.size{
-  &-zero{
-    font-size: 0;
-  }
 }

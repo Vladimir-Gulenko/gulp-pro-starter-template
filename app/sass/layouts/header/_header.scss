@@ -1,5 +1,5 @@
 @include b('header'){
 	position: relative;
-	z-index: z('default');
+	z-index: z-index('default');
 	//@include bg('');
 }

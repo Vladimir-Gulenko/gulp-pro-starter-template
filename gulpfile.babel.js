@@ -62,7 +62,7 @@ gulp.src(['./package.json'])
 gulp.task('sass', () =>
 	gulp.src("app/sass/**/*.scss")
 		.pipe(sassdoc({
-			dest: 'sassdoc',
+			dest: 'app/sassdoc',
 			verbose: true,
 			display: {
 				access: ['public', 'private'],

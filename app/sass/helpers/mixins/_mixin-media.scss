@@ -1,21 +1,35 @@
-/// Media Queries
-@mixin resp-min($breakpoint, $breakpoints: $breakpoints){
-	$value: map-get($breakpoints,$breakpoint);
-	@if $value != null  {
-		@media (min-width: $value ) {
+////
+/// @author Vsevolod Kurochka
+/// @group Responsive Manager
+/// @param {String} $breakpoint - Breakpoint
+////
+
+/// Responsive manager
+@mixin min($breakpoint){
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media (min-width: map-get($breakpoints, $breakpoint) ) {
 			@content;
 		}
-	}@else{
-		 @error $error-variable + " #{$breakpoint}";
+	}
+	// If the key doesn't exist in the map
+	@else {
+		@error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
 	}
 }
-@mixin resp-max($breakpoint, $breakpoints: $breakpoints){
-	$value: map-get($breakpoints,$breakpoint);
-	@if $value != null { 
-		@media (max-width: $value - 1px) {
+
+/// Responsive manager
+@mixin max($breakpoint){
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media (max-width: map-get($breakpoints, $breakpoint) - 1px ) {
 			@content;
-		} 
-	}@else{
-		 @error $error-variable + " #{$breakpoint}";
+		}
+	}
+	// If the key doesn't exist in the map
+	@else {
+		@error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
 	}
 }

@@ -1,5 +1,4 @@
-// Clearfix.
-$themeRow: 'row';
+/// Clearfix.
 @mixin cf(){
 	&:after, &:before{
 		content: "";
@@ -10,25 +9,17 @@ $themeRow: 'row';
 	}
 }
 
-
-@include b($themeRow){
-	@include xOffset('margin', - getComp(gutter));
-}
-.vclearfix{
-	position: relative;
-	@include cf();
-}
 @if getComp(flex) == true{
-	.#{$themePrefix}flex{
+	@include b('flex'){
 		display: flex;
 		flex: 0 1 auto;
-		flex-direction: row;
-		flex-wrap: wrap;
-		&-y-center{
+		flex-flow: row wrap;
+		&_y-center{
 			align-items: center;
 		}
 	}
-	@include b($themeRow){
+	@include b('row'){
+		@include margin-x( - getComp(gutter) );
 		@extend .#{$themePrefix}flex;
 	}
 }

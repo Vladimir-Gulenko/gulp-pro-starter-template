@@ -1,7 +1,7 @@
 @include b($themeNav){
 	@include e('menu'){
 		-webkit-overflow-scrolling:touch;
-		@include resp-max(md){
+		@include max(md){
 			.v#{$themeNav}_style &{
 				transform: translateZ(0) translateX(-120%);
 				position: fixed;
@@ -10,9 +10,9 @@
 				height: 100%;
 				padding: 0 0 100px 0;
 				top: 56px;
-				z-index: z('default');
+				z-index: z-index('default');
 				overflow-y: auto;
-				@include transition($tr-dur: 0.3s);
+				@include transition();
 				background-color: $color-responsive-menu;
 				&_active{
 					transform: none;
