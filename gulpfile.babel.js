@@ -43,7 +43,7 @@ import sassGlob 				from 'gulp-sass-glob';
 import autoprefixer 		from 'gulp-autoprefixer';
 import csscomb 					from 'gulp-csscomb';
 import sassdoc 					from 'sassdoc';
-
+import converter				from 'sass-convert';
 
 // JS
 
@@ -53,6 +53,7 @@ import source 					from 'vinyl-source-stream';
 import babelify 				from "babelify";
 
 
+
 //- Install packages
 gulp.src(['./package.json'])
 	.pipe(install())
@@ -60,19 +61,7 @@ gulp.src(['./package.json'])
 
 // SASS
 gulp.task('sass', () =>
-	gulp.src("app/sass/**/*.scss")
-		.pipe(sassdoc({
-			dest: 'app/sassdoc',
-			verbose: true,
-			display: {
-				access: ['public', 'private'],
-				alias: true,
-				watermark: true,
-			},
-			groups: {
-				undefined: 'All'
-			}
-		}))
+	gulp.src("app/sass/**/*.+(sass|scss)")
 		.pipe(sassGlob())
 		.pipe(sass({
 			outputStyle: 'expanded'
@@ -85,7 +74,7 @@ gulp.task('sass', () =>
 		.pipe(gulp.dest("app/css"))
 );
 gulp.task('sass:watch', () => {
-	gulp.watch("app/sass/**/*.scss", gulp.series('sass', reload));
+	gulp.watch("app/sass/**/*.+(sass|scss)", gulp.series('sass', reload));
 });
 
 
