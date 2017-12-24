@@ -29,6 +29,7 @@
     "gulp-data": "^1.2.1",
     "gulp-html-beautify": "^1.0.1",
     "gulp-if": "^2.0.2",
+    "gulp-image": "^4.1.0",
     "gulp-install": "^1.1.0",
     "gulp-merge-json": "^1.2.0",
     "gulp-notify": "^3.0.0",
