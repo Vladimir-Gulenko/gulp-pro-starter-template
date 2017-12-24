@@ -1,8 +1,6 @@
-extends layout
-block head
-	+add-meta('Unit Test - Collapse')
-	+js('../js/lib/jquery.min.js')
-	+js('../js/jquery.main.js')
+extends /site/docs/extends/layout
+block variables
+	- var title = 'Unit Test - Collapse';
 block intro
 	+docs-intro('Collapse', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
 block content

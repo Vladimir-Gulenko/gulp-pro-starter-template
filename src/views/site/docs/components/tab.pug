@@ -1,13 +1,11 @@
-extends layout
-block head
-	+add-meta('Unit Test - Tab')
-	+js('../js/lib/jquery.min.js')
-	+js('../js/jquery.main.js')
+extends /site/docs/extends/layout
+block variables
+	- var title = 'Unit Test - Tab';
 block intro
 	+docs-intro('Tab', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
 block content
 	+e.group
-		+b.vtabs
+		+b.tabs
 			+e.UL.list
 				+e.LI.list-item.active
 					+e.A.list-item-link(data-action="tab" data-target="#tab-1") Tab 1
