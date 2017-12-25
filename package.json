@@ -40,7 +40,9 @@
     "sassdoc": "^2.5.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "del": "^3.0.0"
+  },
   "browserify": {
     "transform": [
       [

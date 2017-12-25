@@ -1,163 +1,159 @@
-'use strict';
-
 // General functions
-function log(logText) {
-	console.log(logText);
-}
-
-var hasClass = function hasClass(element, cls) {
-	return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-};
-
-function addClass(element, cls) {
-	if (!hasClass(element, cls)) {
-		var empty = '';
-		if (element.classList.value != "") empty = ' ';
-		element.className += empty + cls;
+	function log(logText){
+		console.log(logText);
 	}
-}
 
-function removeClass(element, cls) {
-	if (hasClass(element, cls)) element.classList.remove(cls);
-}
+	var hasClass = (element, cls) => (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 
-function toggleClass(element, cls) {
-	hasClass(element, cls) ? removeClass(element, cls) : addClass(element, cls);
-}
+	function addClass(element,cls){
+		if( !hasClass(element, cls) ){
+			let empty = '';
+			if(element.classList.value != "") empty = ' ';
+			element.className += empty + cls;
+		}
+	}
 
-var exists = function exists(element) {
-	return typeof element != 'undefined' && element != null;
-};
+	function removeClass(element, cls){
+		if( hasClass(element, cls) ) element.classList.remove(cls);
+	}
 
-(function () {
-	document.addEventListener("DOMContentLoaded", function () {
-		var _this = this;
+	function toggleClass(element, cls){
+		hasClass(element, cls) ? removeClass(element, cls) : addClass(element, cls);
+	}
 
-		var classes = {
+	var exists = element => typeof(element) != 'undefined' && element != null;
+
+(function(){
+	document.addEventListener("DOMContentLoaded", function(){
+
+		const classes = {
 			active: 'active',
-			menuActive: 'vnav__menu_active'
-
-			// Anchors links
-		};function scrollTo(element, to, duration) {
-			if (duration <= 0) return;
-			var difference = to - element.scrollTop - 75;
-			var perTick = difference / duration * 10;
-			setTimeout(function () {
-				element.scrollTop = element.scrollTop + perTick;
-				if (element.scrollTop === to) return;
-				scrollTo(element, to, duration - 10);
-			}, 10);
+			menuActive: 'v-nav__menu_active'
 		}
 
-		// Anchors
-		var anchors = document.getElementsByClassName('anchor');
+		// Anchors links
+			function scrollTo(element, to, duration) {
+				if (duration <= 0) return;
+				var difference = to - element.scrollTop - 75;
+				var perTick = difference / duration * 10;
+				setTimeout(function() {
+					element.scrollTop = element.scrollTop + perTick;
+					if (element.scrollTop === to) return;
+					scrollTo(element, to, duration - 10);
+				}, 10);
+			}
+			
+			// Anchors
+				const anchors = document.getElementsByClassName('anchor');
 
-		for (var _i = 0; _i < anchors.length; _i++) {
-			anchors[_i].addEventListener('click', function (e) {
-				e.preventDefault();
-				var href = _this.getAttribute("href").replace("#", "");
-				var scrollAnchor = document.getElementById(href);
-				scrollTo(document.body, scrollAnchor.offsetTop, 600);
-			});
-		}
-
+				for(let i = 0; i < anchors.length; i++){
+					anchors[i].addEventListener('click', (e) => {
+						e.preventDefault();
+						let href = this.getAttribute("href").replace("#", "");
+						let scrollAnchor = document.getElementById(href);
+						scrollTo(document.body, scrollAnchor.offsetTop, 600);
+					});
+				}
+			
 		// Navigation
-		var jsNav = document.getElementById('navigation');
+			const jsNav = document.getElementById('navigation');
 
-		// Navigation links
-		var jsNavLinks = document.querySelectorAll('.nav__menu a[href*="#"]');
+			// Navigation links
+				const jsNavLinks = document.querySelectorAll('.v-nav__menu a[href*="#"]');
 
-		for (var i = 0; i < jsNavLinks.length; i++) {
-			jsNavLinks[i].addEventListener('click', function (e) {
-				e.preventDefault();
+				for(var i = 0; i < jsNavLinks.length; i++){
+					jsNavLinks[i].addEventListener('click', (e) => {
+						e.preventDefault();
 
-				var vnavhref = _this.getAttribute("href").replace("#", "");
-				var vnavscrollAnchor = document.getElementById(vnavhref);
+						let vnavhref = this.getAttribute("href").replace("#", "");
+						let vnavscrollAnchor = document.getElementById(vnavhref);
 
-				removeClass(jsNavBtn, classes.active);
-				removeClass(jsNav, classes.menuActive);
+						removeClass(jsNavBtn, classes.active);
+						removeClass(jsNav, classes.menuActive);
 
-				scrollTo(document.body, vnavscrollAnchor.offsetTop, 600);
-			});
-		}
+						scrollTo(document.body, vnavscrollAnchor.offsetTop, 600);
 
-		// Button HAMBURGER
-		var jsNavBtn = document.getElementById('js-vnav__btn');
+					});
+				}
 
-		if (exists(jsNavBtn)) {
-			jsNavBtn.addEventListener('click', function () {
-				toggleClass(this, classes.active);
-				toggleClass(jsNav, classes.menuActive);
-			});
-		}
+			// Button HAMBURGER
+				const jsNavBtn = document.getElementById('js-vnav__btn');
 
-		// Click on toggle element in navigation
-		var jsNavText = document.getElementById('js-vnav-addition');
-		if (exists(jsNavText)) {
-			jsNavText.addEventListener('click', function () {
-				toggleClass(this, classes.active);
-			});
-		}
+				if(exists(jsNavBtn)){
+					jsNavBtn.addEventListener('click', function(){
+						toggleClass(this, classes.active);
+						toggleClass(jsNav, classes.menuActive);
+					});
+				}
+
+
+			// Click on toggle element in navigation
+				const jsNavText = document.getElementById('js-vnav-addition');
+				if(exists(jsNavText)){
+					jsNavText.addEventListener('click', function() {
+						toggleClass(this, classes.active);
+					});	
+				}
+
 
 		// Modal Window initialization
-		var themeModal = 'vmodal';
-		var modalBtn = document.querySelectorAll('[data-action="' + themeModal + '"]');
-		var modalBtnL = modalBtn.length;
+		let themeModal = 'v-modal';
+		let modalBtn = document.querySelectorAll(`[data-action="${themeModal}"]`);
+		let modalBtnL = modalBtn.length;
 
-		var modal = document.querySelectorAll('.' + themeModal);
-		var modalL = modal.length;
+		const modal = document.querySelectorAll(`.${themeModal}`);
+		const modalL = modal.length;
 
-		var modalBtnClose = document.querySelectorAll('[data-close="' + themeModal + '"]');
-		var modalBtnCloseL = modalBtnClose.length;
+		const modalBtnClose = document.querySelectorAll(`[data-close="${themeModal}"]`);
+		const modalBtnCloseL = modalBtnClose.length;
 
-		function modalClose(el) {
-			removeClass(el, themeModal + '_showing_in');
-			removeClass(document.body, themeModal + '-open');
+		
+		function modalClose(el){
+			removeClass(el, `${themeModal}_showing_in`);
+			removeClass(document.body, `${themeModal}-open`);
 			// if(el.getElementsByClassName('vmodal__video')[0]){
 			// 	el.getElementsByClassName('vmodal__video')[0].innerHTML = '';
 			// }
 		}
-		function getEventTarget(e) {
+		function getEventTarget(e){
 			var targ;
-
-			if (e.target) {
-				// W3C
+	
+			if (e.target) { // W3C
 				targ = e.target;
-			} else if (e.srcElement) {
-				// IE6-8
+			}else if (e.srcElement) { // IE6-8
 				targ = e.srcElement;
-			} else if (e.originalTarget) {
+			}else if(e.originalTarget){
 				targ = e.originalTarget;
 			}
-			if (targ.nodeType == 3) {
-				// Safari
+			if (targ.nodeType == 3) { // Safari
 				targ = targ.parentNode;
 			}
 			return targ;
 		}
-		function bodyClick(e) {
-			var target = getEventTarget(e);
-			for (var _i2 = 0; _i2 < modalL; _i2++) {
-				if (target == modal[_i2]) {
-					modalClose(modal[_i2]);
+		function bodyClick(e){
+			let target = getEventTarget(e);
+			for(let i = 0; i < modalL; i++){
+				if (target == modal[i]) {
+					modalClose(modal[i]);
 				}
 			}
 		}
-		for (var i = 0; i < modalBtnL; i++) {
-			modalBtn[i].addEventListener('click', function () {
+		for(var i = 0; i < modalBtnL; i++){
+			modalBtn[i].addEventListener('click', function(){
 
 				// Get button data-attributes
 				var modalData = this.dataset;
 
 				// Get attribute data-open and replace # with empty line
 				var modalID = modalData.open.replace("#", "");
+				
+				
+				if( exists(document.getElementById(modalID) ) ){
 
-				if (exists(document.getElementById(modalID))) {
+					let modalCurrent = document.getElementById(modalID);
 
-					var modalCurrent = document.getElementById(modalID);
-
-					addClass(document.body, themeModal + '-open');
-					addClass(modalCurrent, themeModal + '_showing_in');
+					addClass(document.body, `${themeModal}-open`);
+					addClass(modalCurrent, `${themeModal}_showing_in`);
 
 					// if(modalData.video != undefined){
 					// 	let videoSRC = modalData.video;
@@ -171,25 +167,27 @@ var exists = function exists(element) {
 					// 	videoIframe.setAttribute('src', videoSRC);
 					// 	videoWrapper.appendChild(videoIframe);
 					// }
-				} else {
+
+				}else{
 					console.error('No element with ID: ' + modalID);
 				}
+
 			});
 		}
-
-		for (var _i3 = 0; _i3 < modalBtnCloseL; _i3++) {
-			modalBtnClose[_i3].addEventListener('click', function () {
-				modalClose(this.closest('.' + themeModal));
+		
+		for(let i = 0; i < modalBtnCloseL; i++){
+			modalBtnClose[i].addEventListener('click', function(){
+				modalClose(this.closest(`.${themeModal}`));
 			});
 		}
+		
+		let bodyEvents = ['click', 'touchstart'];
+		let bodyEventsL = bodyEvents.length;
 
-		var bodyEvents = ['click', 'touchstart'];
-		var bodyEventsL = bodyEvents.length;
-
-		for (var _i4 = 0; _i4 < bodyEventsL; _i4++) {
-			document.body.addEventListener(bodyEvents[_i4], function (e) {
+		for(let i = 0; i < bodyEventsL; i++){
+			document.body.addEventListener(bodyEvents[i], function(e) {
 				bodyClick(e);
 			}, false);
 		}
 	});
-})();
+}());

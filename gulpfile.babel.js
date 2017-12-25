@@ -23,6 +23,7 @@ import install 					from 'gulp-install';
 import notify 					from 'gulp-notify';
 import fs 							from 'fs';
 import path 						from 'path';
+import del 							from 'del';
 
 
 /**
@@ -196,6 +197,10 @@ gulp.task('image', () =>
 		.pipe(gulp.dest(`${folders.build}/img`))
 );
 
+gulp.task('image:watch', () =>
+	gulp.watch(`${folders.src}/img/**/*`, gulp.series('image', reload))
+);
+
 // JS
 
 // gulp.task('scripts', () =>
@@ -217,27 +222,69 @@ gulp.task('image', () =>
 // 	.pipe(gulp.dest('app/js'))
 // );
 
-// gulp.task('scripts:watch', () => {
-// 	gulp.watch("app/babel/**/*.js", gulp.series('scripts', reload));
-// });
 
+/**
+ * JS
+ * -----------------------------------------------------------------------------
+ */
+
+gulp.task('scripts', () =>
+	gulp.src(`${folders.src}/js/*.js`)
+		.pipe(babel())
+		.pipe(gulp.dest(`${folders.build}/js`))
+);
+
+gulp.task('scripts:watch', () =>
+	gulp.watch(`${folders.src}/js/*.js`, gulp.series('scripts', reload))
+);
+
+/**
+ * Fonts from Source to Build
+ * -----------------------------------------------------------------------------
+ */
+
+gulp.task('fonts', () =>
+	gulp.src(`${folders.src}/fonts/**/*`)
+		.pipe(gulp.dest(`${folders.build}/fonts`))
+);
+
+gulp.task('fonts:watch', () =>
+	gulp.watch(`${folders.src}/fonts/**/*`, gulp.series('fonts', reload))
+);
 
 // Your "watch" task
 gulp.task(
 	'watch', 
 	gulp.parallel(
 		serve,
+		'sass',
+		'templates',
+		'scripts',
+		'image',
+		'fonts',
 		'sass:watch',
 		'templates:watch',
-		'image'
+		'scripts:watch',
+		'image:watch',
+		'fonts:watch'
 	)
+);
+
+gulp.task('clean', () =>
+	del(`${folders.build}`, {force: true})
 );
 
 gulp.task(
 	'build',
-	gulp.parallel(
-		'sass',
-		'templates'
+	gulp.series(
+		'clean',
+		gulp.parallel(
+			'sass',
+			'templates',
+			'scripts',
+			'image',
+			'fonts'
+		)
 	)
 );
 
