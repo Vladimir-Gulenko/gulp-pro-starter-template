@@ -1,85 +1,116 @@
 // Variables
 
-$hamburger-width: 24px
-$hamburger-height: 20px
+$hamburger-width: 30px
+$hamburger-height: 26px
 $hamburger-transistion-duration: 0.3s
 $hamburger-line-width: 100%
 $hamburger-line-height: 4px
+$hamburger-line-radius: 4px
 
-.#{$themePrefix}hamburger
-  @at-root
-    %hamburger-format
-      display: inline-block
-      vertical-align: middle
++b('hamburger')
+	@at-root
+		%hamburger-format
+			display: inline-block
+			vertical-align: middle
 
-    %hamburger-transition
-      +transition($duration: $hamburger-transistion-duration)
+		%hamburger-transition
+			transition: .25s ease-in-out
 
-  margin-right: 15px
-  padding: 0
-  background-color: transparent
-  border: none
-  outline: none
-  appearance: none
-  -webkit-tap-highlight-color: transparent
+	margin-right: 15px
+	padding: 0
+	background-color: transparent
+	border: none
+	outline: none
+	appearance: none
+	-webkit-tap-highlight-color: transparent
 
-  @extend %hamburger-transition
+	@extend %hamburger-transition
 
-  @extend %hamburger-format
+	@extend %hamburger-format
 
-  &__lines
-    +relative
+	&__lines
+		+relative
 
-    +size($hamburger-width, $hamburger-height)
+		+size($hamburger-width, $hamburger-height)
 
-    text-indent: -9999px
+		text-indent: -9999px
 
-    @extend %hamburger-format
+		@extend %hamburger-format
 
-    @extend %hamburger-transition
+		@extend %hamburger-transition
 
-    span
-      display: block
-      position: absolute
-      left: 0
-      width: $hamburger-line-width
-      height: $hamburger-line-height
-      background-color: $color-white
+		span
+			display: block
+			position: absolute
+			left: 0
+			width: $hamburger-line-width
+			height: $hamburger-line-height
+			background-color: $color-white
+			border-radius: $hamburger-line-radius
+			@extend %hamburger-transition
 
-      @extend %hamburger-transition
+	&_effect-1 &__lines
+		span
+			&:nth-child(1)
+				top: 0
+				transform-origin: 3px 5px
 
-      &:nth-child(1)
-        top: 0
-        transform-origin: 3px 5px
+			&:nth-child(2)
+				top: 8px
+				opacity: 1
 
-      &:nth-child(2)
-        top: 8px
-        opacity: 1
+			&:nth-child(3)
+				top: 16px
+				transform-origin: 1px -1px
 
-      &:nth-child(3)
-        top: 16px
-        transform-origin: 1px -1px
+	&_effect-1.active &__lines
+		span
+			&:nth-child(1)
+				transform: rotate(45deg)
 
-  &__text
-    margin-left: 15px
-    color: $color-white
-    text-transform: uppercase
-    font-weight: bold
-    font-size: 18px
+			&:nth-child(2)
+				transform: translateX(-60px)
+				opacity: 0
 
-    @extend %hamburger-format
+			&:nth-child(3)
+				transform: rotate(-45deg)
 
-  &.active &__lines
-    span
-      &:nth-child(1)
-        transform: rotate(45deg)
+	&_effect-2 &__lines
+		span
+			&:nth-child(1)
+				top: 0
 
-      &:nth-child(2)
-        transform: translateX(-60px)
-        opacity: 0
+			&:nth-child(2),	
+			&:nth-child(3)
+				top: 10.5px
 
-      &:nth-child(3)
-        transform: rotate(-45deg)
+			&:nth-child(4)
+				top: 21px
+	&_effect-2.active &__lines
+		span
+			&:nth-child(1)
+				top: 10.5px
+				width: 0%
+				left: 50%
+			&:nth-child(2)
+				transform: rotate(45deg)
+			&:nth-child(3)
+				transform: rotate(-45deg)
+			&:nth-child(4)
+				top: 10.5px
+				width: 0%
+				left: 50%
 
-  +min(md)
-    display: none
+	&__text
+		margin-left: 15px
+		color: $color-white
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 18px
+
+		@extend %hamburger-format
+
+	
+
+	+min(md)
+		display: none
