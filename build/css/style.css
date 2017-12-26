@@ -1069,12 +1069,6 @@ b,
   top: 20px;
 }
 
-.hamburger_effect-2.active {
-  -webkit-transform: rotate(-180deg);
-  -ms-transform: rotate(-180deg);
-  transform: rotate(-180deg);
-}
-
 .hamburger_effect-2.active .hamburger__lines span:nth-child(1) {
   top: 10.5px;
   left: 50%;
