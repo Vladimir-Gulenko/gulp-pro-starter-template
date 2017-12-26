@@ -32,7 +32,6 @@
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8",
-    "sass-convert": "^0.5.2",
     "sassdoc": "^2.5.0"
   },
   "dependencies": {
