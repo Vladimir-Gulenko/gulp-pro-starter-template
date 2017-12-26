@@ -214,7 +214,7 @@ gulp.task('scripts:watch', () =>
 
 gulp.task('bundle', () =>{
 	browserify({
-		entries: `./src/js/bundle/bundle.js`,
+		entries: `${folders.src}/js/bundle/bundle.js`,
 		debug: true
 	})
 	.on('error', notify.onError({
@@ -232,13 +232,27 @@ gulp.task('bundle', () =>{
 			message: '<%= error.message %>'
 	}))
 	.pipe(source('bundle.js'))
-	.pipe(gulp.dest('build/js'))
+	.pipe(gulp.dest(`${folders.build}/js`))
 });
 
 gulp.task('bundle:watch', () =>
 	gulp.watch(`${folders.src}/js/bundle/**/*.js`, gulp.series('bundle', reload))
 );
 
+gulp.task('bundle-modules', () =>
+	gulp.src(`${folders.src}/js/bundle/modules/**/*.js`)
+		.pipe(babel())
+		.pipe(gulp.dest(`${folders.build}/js/modules`))
+);
+
+gulp.task('bundle-modules:watch', () =>
+	gulp.watch(`${folders.src}/js/bundle/modules/**/*.js`, gulp.series('bundle', reload))
+);
+
+// gulp.task('bundle-modules', () =>
+// 	gulp.src(`${folders.src}/js/bundle/modules/**/*.js`)
+// 		.pipe()
+// );
 
 /**
  * Fonts from Source to Build
@@ -263,12 +277,14 @@ gulp.task(
 		'templates',
 		'scripts',
 		'bundle',
+		'bundle-modules',
 		'image',
 		'fonts',
 		'sass:watch',
 		'templates:watch',
 		'scripts:watch',
 		'bundle:watch',
+		'bundle-modules:watch',
 		'image:watch',
 		'fonts:watch'
 	)
