@@ -25,7 +25,6 @@
     "gulp-babel": "^7.0.0",
     "gulp-cache": "^1.0.1",
     "gulp-csscomb": "^3.0.8",
-    "gulp-html-beautify": "^1.0.1",
     "gulp-image": "^4.1.0",
     "gulp-install": "^1.1.0",
     "gulp-notify": "^3.0.0",
