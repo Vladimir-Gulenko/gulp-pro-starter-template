@@ -26,10 +26,7 @@
 (function(){
 	document.addEventListener("DOMContentLoaded", function(){
 
-		const classes = {
-			active: 'active',
-			menuActive: 'v-nav__menu_active'
-		}
+		const themePrefix = '';
 
 		// Anchors links
 			function scrollTo(element, to, duration) {
@@ -59,7 +56,7 @@
 			const jsNav = document.getElementById('navigation');
 
 			// Navigation links
-				const jsNavLinks = document.querySelectorAll('.v-nav__menu a[href*="#"]');
+				const jsNavLinks = document.querySelectorAll(`${themePrefix}nav__menu a[href*="#"]`);
 
 				for(var i = 0; i < jsNavLinks.length; i++){
 					jsNavLinks[i].addEventListener('click', (e) => {
@@ -68,8 +65,8 @@
 						let vnavhref = this.getAttribute("href").replace("#", "");
 						let vnavscrollAnchor = document.getElementById(vnavhref);
 
-						removeClass(jsNavBtn, classes.active);
-						removeClass(jsNav, classes.menuActive);
+						removeClass(jsNavBtn, 'active');
+						removeClass(jsNav, `${themePrefix}nav__menu_active`);
 
 						scrollTo(document.body, vnavscrollAnchor.offsetTop, 600);
 
@@ -81,8 +78,8 @@
 
 				if(exists(jsNavBtn)){
 					jsNavBtn.addEventListener('click', function(){
-						toggleClass(this, classes.active);
-						toggleClass(jsNav, classes.menuActive);
+						toggleClass(this, 'active');
+						toggleClass(jsNav, `${themePrefix}nav__menu_active`);
 					});
 				}
 
@@ -91,13 +88,13 @@
 				const jsNavText = document.getElementById('js-vnav-addition');
 				if(exists(jsNavText)){
 					jsNavText.addEventListener('click', function() {
-						toggleClass(this, classes.active);
+						toggleClass(this, 'active');
 					});	
 				}
 
 
 		// Modal Window initialization
-		let themeModal = 'v-modal';
+		let themeModal = `${themePrefix}modal`;
 		let modalBtn = document.querySelectorAll(`[data-action="${themeModal}"]`);
 		let modalBtnL = modalBtn.length;
 

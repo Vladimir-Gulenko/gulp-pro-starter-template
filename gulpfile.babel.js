@@ -205,6 +205,10 @@ gulp.task('image:watch', () =>
 gulp.task('scripts', () =>
 	gulp.src(`${folders.src}/js/*.js`)
 		.pipe(babel())
+		.on('error', notify.onError({
+			title: 'Babel Error',
+			message: '<%= error.message %>'
+		}))
 		.pipe(gulp.dest(`${folders.build}/js`))
 );
 

@@ -4,7 +4,7 @@
 /// @return {Number}
 /// @require $z-indexes
 /// @author Vsevolod Kurochka
-@function z-index($layer)
+@function z($layer)
   @if map-has-key($z-indexes, $layer)
     @return map-get($z-indexes, $layer)
   @else

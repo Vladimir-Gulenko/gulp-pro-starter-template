@@ -1,4 +1,4 @@
-.v-docs__intro {
+.docs__intro {
   padding-top: 90px;
   padding-bottom: 90px;
   margin-bottom: 45px;
@@ -6,34 +6,34 @@
   background-color: #28a5f5;
 }
 
-.v-docs__intro-title {
+.docs__intro-title {
   font-size: 50px;
   font-weight: bold;
 }
 
-.v-docs__intro-description {
+.docs__intro-description {
   font-size: 20px;
 }
 
-.v-docs__section {
+.docs__section {
   padding-bottom: 30px;
   margin-bottom: 30px;
 }
 
-.v-docs__group {
+.docs__group {
   padding-bottom: 30px;
   margin-bottom: 30px;
 }
 
-.v-docs__group:not(:last-child) {
+.docs__group:not(:last-child) {
   border-bottom: 1px solid #e4e4e4;
 }
 
-.v-docs__group:not(:first-child) {
+.docs__group:not(:first-child) {
   margin-top: 30px;
 }
 
-.v-docs__group-title {
+.docs__group-title {
   position: relative;
   margin-bottom: 30px;
   font-size: 25px;
@@ -41,16 +41,16 @@
   color: #28a5f5;
 }
 
-.v-docs__sidebar-list {
+.docs__sidebar-list {
   padding: 15px;
   list-style: none;
 }
 
-.v-docs__sidebar-list-item {
+.docs__sidebar-list-item {
   display: block;
 }
 
-.v-docs__sidebar-list-item-link {
+.docs__sidebar-list-item-link {
   display: block;
   padding: 5px 0;
   color: #999;
@@ -60,6 +60,6 @@
   transition: all ease .5s;
 }
 
-.v-docs__sidebar-list-item-link:hover {
+.docs__sidebar-list-item-link:hover {
   color: #28a5f5;
 }
