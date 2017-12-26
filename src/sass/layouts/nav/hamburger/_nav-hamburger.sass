@@ -1,7 +1,7 @@
 // Variables
 
-$hamburger-width: 30px
-$hamburger-height: 26px
+$hamburger-width: 26px
+$hamburger-height: 24px
 $hamburger-transistion-duration: 0.3s
 $hamburger-line-width: 100%
 $hamburger-line-height: 4px
@@ -47,59 +47,7 @@ $hamburger-line-radius: 4px
 			height: $hamburger-line-height
 			background-color: $color-white
 			border-radius: $hamburger-line-radius
-			@extend %hamburger-transition
-
-	&_effect-1 &__lines
-		span
-			&:nth-child(1)
-				top: 0
-				transform-origin: 3px 5px
-
-			&:nth-child(2)
-				top: 8px
-				opacity: 1
-
-			&:nth-child(3)
-				top: 16px
-				transform-origin: 1px -1px
-
-	&_effect-1.active &__lines
-		span
-			&:nth-child(1)
-				transform: rotate(45deg)
-
-			&:nth-child(2)
-				transform: translateX(-60px)
-				opacity: 0
-
-			&:nth-child(3)
-				transform: rotate(-45deg)
-
-	&_effect-2 &__lines
-		span
-			&:nth-child(1)
-				top: 0
-
-			&:nth-child(2),	
-			&:nth-child(3)
-				top: 10.5px
-
-			&:nth-child(4)
-				top: 21px
-	&_effect-2.active &__lines
-		span
-			&:nth-child(1)
-				top: 10.5px
-				width: 0%
-				left: 50%
-			&:nth-child(2)
-				transform: rotate(45deg)
-			&:nth-child(3)
-				transform: rotate(-45deg)
-			&:nth-child(4)
-				top: 10.5px
-				width: 0%
-				left: 50%
+			@extend %hamburger-transition	
 
 	&__text
 		margin-left: 15px
@@ -109,8 +57,6 @@ $hamburger-line-radius: 4px
 		font-size: 18px
 
 		@extend %hamburger-format
-
-	
 
 	+min(md)
 		display: none
