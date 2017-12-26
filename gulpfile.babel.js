@@ -201,27 +201,6 @@ gulp.task('image:watch', () =>
 	gulp.watch(`${folders.src}/img/**/*`, gulp.series('image', reload))
 );
 
-// JS
-
-// gulp.task('scripts', () =>
-// 	browserify({
-// 		entries: 'app/babel/app.js',
-// 		debug: true
-// 	})
-// 	.transform(babelify)
-// 	.on('error', notify.onError({
-// 			title: 'babelify Error',
-// 			message: '<%= error.message %>'
-// 	}))
-// 	.bundle()
-// 	.on('error', notify.onError({
-// 			title: 'Bundle Error',
-// 			message: '<%= error.message %>'
-// 	}))
-// 	.pipe(source('bundle.js'))
-// 	.pipe(gulp.dest('app/js'))
-// );
-
 
 /**
  * JS
@@ -237,6 +216,26 @@ gulp.task('scripts', () =>
 gulp.task('scripts:watch', () =>
 	gulp.watch(`${folders.src}/js/*.js`, gulp.series('scripts', reload))
 );
+
+gulp.task('bundle', () =>{
+	browserify({
+		entries: `src/js/bundle/bundle.js`,
+		debug: true
+	})
+	// .on('error', notify.onError({
+	// 		title: 'Browserify Error',
+	// 		message: '<%= error.message %>'
+	// }))
+	.transform(babelify)
+	.bundle()
+	.pipe(source('bundle.js'))
+	.pipe(gulp.dest('build/js'))
+});
+
+gulp.task('bundle:watch', () =>
+	gulp.watch(`${folders.src}/js/bundle/**/*.js`, gulp.series('bundle', reload))
+);
+
 
 /**
  * Fonts from Source to Build
@@ -260,11 +259,13 @@ gulp.task(
 		'sass',
 		'templates',
 		'scripts',
+		'bundle',
 		'image',
 		'fonts',
 		'sass:watch',
 		'templates:watch',
 		'scripts:watch',
+		'bundle:watch',
 		'image:watch',
 		'fonts:watch'
 	)

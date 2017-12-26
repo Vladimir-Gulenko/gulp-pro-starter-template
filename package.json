@@ -20,15 +20,12 @@
     "babelify": "^8.0.0",
     "browser-sync": "^2.18.13",
     "browserify": "^14.5.0",
-    "emitty": "^1.4.1",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-cache": "^1.0.1",
     "gulp-csscomb": "^3.0.8",
-    "gulp-data": "^1.2.1",
     "gulp-html-beautify": "^1.0.1",
-    "gulp-if": "^2.0.2",
     "gulp-image": "^4.1.0",
     "gulp-install": "^1.1.0",
     "gulp-merge-json": "^1.2.0",
@@ -37,8 +34,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8",
     "sass-convert": "^0.5.2",
-    "sassdoc": "^2.5.0",
-    "vinyl-source-stream": "^1.1.0"
+    "sassdoc": "^2.5.0"
   },
   "dependencies": {
     "del": "^3.0.0"
