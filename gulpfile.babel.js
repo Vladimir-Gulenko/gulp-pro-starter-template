@@ -18,7 +18,6 @@ const folders = {
  */
 
 import gulp 						from 'gulp';
-import data 						from 'gulp-data';
 import install 					from 'gulp-install';
 import notify 					from 'gulp-notify';
 import fs 							from 'fs';
@@ -39,9 +38,7 @@ import browserSync 			from 'browser-sync';
  * -----------------------------------------------------------------------------
  */
 
-import gulpif 					from 'gulp-if';
 import pug 							from 'gulp-pug';
-const emitty 			= require('emitty').setup('src/views', 'pug');
 
 
 /**
@@ -53,8 +50,6 @@ import sass 						from 'gulp-sass';
 import sassGlob 				from 'gulp-sass-glob';
 import autoprefixer 		from 'gulp-autoprefixer';
 import csscomb 					from 'gulp-csscomb';
-import sassdoc 					from 'sassdoc';
-import converter				from 'sass-convert';
 
 /**
  * JS
@@ -219,15 +214,23 @@ gulp.task('scripts:watch', () =>
 
 gulp.task('bundle', () =>{
 	browserify({
-		entries: `src/js/bundle/bundle.js`,
+		entries: `./src/js/bundle/bundle.js`,
 		debug: true
 	})
-	// .on('error', notify.onError({
-	// 		title: 'Browserify Error',
-	// 		message: '<%= error.message %>'
-	// }))
+	.on('error', notify.onError({
+			title: 'Browserify Error',
+			message: '<%= error.message %>'
+	}))
 	.transform(babelify)
+	.on('error', notify.onError({
+		title: 'Babelify Error',
+		message: '<%= error.message %>'
+	}))
 	.bundle()
+	.on('error', notify.onError({
+			title: 'Bundle Error',
+			message: '<%= error.message %>'
+	}))
 	.pipe(source('bundle.js'))
 	.pipe(gulp.dest('build/js'))
 });
