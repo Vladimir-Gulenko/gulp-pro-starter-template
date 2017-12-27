@@ -61,3 +61,5 @@ PSD/
 *.psd
 
 build/
+
+build/*
