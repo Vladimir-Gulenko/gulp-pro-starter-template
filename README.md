@@ -11,7 +11,7 @@ git clone https://github.com/VsevolodKurochka/gulp-pro-starter-template.git
 
 ### 2. Go inside cloned repo
 ```
-cd gulp-starter-kit
+cd gulp-pro-starter-template
 ```
 
 ### 3. Install all dependencies (make sure nodejs with npm is installed on your machine)
