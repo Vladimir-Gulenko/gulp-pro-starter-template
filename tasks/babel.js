@@ -10,6 +10,7 @@ import notify 					from 'gulp-notify';
 import {server, reload, serve} from './browserSync';
 
 
+// Task `scripts`
 gulp.task('scripts', () =>
 	gulp.src(`${folders.src}/js/*.js`)
 		.pipe(babel())
@@ -20,6 +21,7 @@ gulp.task('scripts', () =>
 		.pipe(gulp.dest(`${folders.build}/js`))
 );
 
+// Task `scripts:watch`
 gulp.task('scripts:watch', () =>
 	gulp.watch(`${folders.src}/js/*.js`, gulp.series('scripts', reload))
 );

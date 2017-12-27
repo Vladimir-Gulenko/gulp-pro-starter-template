@@ -11,6 +11,8 @@ import autoprefixer 		from 'gulp-autoprefixer';
 import csscomb 					from 'gulp-csscomb';
 import {server, reload, serve} from './browserSync';
 
+
+// Task `sass`
 gulp.task('sass', () => gulp
 	.src(`${folders.src}/sass/**/*.+(sass|scss)`)
 	.pipe(sassGlob())
@@ -25,10 +27,8 @@ gulp.task('sass', () => gulp
 	.pipe(gulp.dest(`${folders.build}/css`))
 );
 
-/**
- * SASS (watch)
- * -----------------------------------------------------------------------------
- */
+
+// Task `sass:watch`
 gulp.task('sass:watch', () => {
 	gulp.watch(`${folders.src}/sass/**/*.+(sass|scss)`, gulp.series('sass', reload));
 });

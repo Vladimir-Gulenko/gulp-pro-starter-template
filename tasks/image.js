@@ -9,6 +9,8 @@ import image 						from 'gulp-image';
 import del 							from 'del';
 import {server, reload, serve} from './browserSync';
 
+
+// Task `image`
 gulp.task('image', () => {
 	del(`${folders.build}/img`, {force: true})
 	gulp.src(`${folders.src}/img/**/*`)
@@ -18,6 +20,8 @@ gulp.task('image', () => {
 		.pipe(gulp.dest(`${folders.build}/img`))
 });
 
+
+// Task `image:watch`
 gulp.task('image:watch', () =>
 	gulp.watch(`${folders.src}/img/**/*`, gulp.series('image', reload))
 );
