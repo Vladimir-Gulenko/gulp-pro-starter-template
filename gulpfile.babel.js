@@ -184,13 +184,14 @@ gulp.task('templates:watch', () => {
  * -----------------------------------------------------------------------------
  */
 
-gulp.task('image', () =>
+gulp.task('image', () => {
+	del(`${folders.build}/img`, {force: true})
 	gulp.src(`${folders.src}/img/**/*`)
 		.pipe(image({
 			zopflipng: false
 		}))
 		.pipe(gulp.dest(`${folders.build}/img`))
-);
+});
 
 gulp.task('image:watch', () =>
 	gulp.watch(`${folders.src}/img/**/*`, gulp.series('image', reload))
