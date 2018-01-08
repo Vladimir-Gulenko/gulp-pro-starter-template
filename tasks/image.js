@@ -12,10 +12,11 @@ import {server, reload, serve} from './browserSync';
 
 // Task `image`
 gulp.task('image', () => {
-	del(`${folders.build}/img`, {force: true})
+	//del(`${folders.build}/img`, {force: true})
 	gulp.src(`${folders.src}/img/**/*`)
 		.pipe(image({
-			zopflipng: false
+			zopflipng: false,
+			svgo: false
 		}))
 		.pipe(gulp.dest(`${folders.build}/img`))
 });
@@ -23,5 +24,5 @@ gulp.task('image', () => {
 
 // Task `image:watch`
 gulp.task('image:watch', () =>
-	gulp.watch(`${folders.src}/img/**/*`, gulp.series('image', reload))
+	gulp.watch(`${folders.src}/img/**/*`).on('all', gulp.series('image', reload))
 );
