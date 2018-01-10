@@ -1,8 +1,3 @@
-import {message} from './modules/message';
-import {create} from './modules/create';
+import getFive from './modules/getFive';
 
-const messages = {
-	consoleMessage: message('App Works!')
-}
-
-console.info(messages.consoleMessage);
+console.log('ssssasd');

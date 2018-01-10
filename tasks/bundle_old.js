@@ -11,7 +11,7 @@ import browserify 			from 'browserify';
 import source 					from 'vinyl-source-stream';
 import babelify 				from "babelify";
 import notify 					from 'gulp-notify';
-import {server, reload, serve} from './browserSync';
+import {reload} from './browserSync';
 
 
 // Task `bundle`
@@ -46,14 +46,14 @@ gulp.task('bundle:watch', () =>
 
 
 // Task `bundle-modules`
-gulp.task('bundle-modules', () =>
-	gulp.src(`${folders.src}/js/bundle/modules/**/*.js`)
-		.pipe(babel())
-		.pipe(gulp.dest(`${folders.build}/js/modules`))
-);
+// gulp.task('bundle-modules', () =>
+// 	gulp.src(`${folders.src}/js/bundle/modules/**/*.js`)
+// 		.pipe(babel())
+// 		.pipe(gulp.dest(`${folders.build}/js/modules`))
+// );
 
 
-// Task `bundle-modules:watch`
-gulp.task('bundle-modules:watch', () =>
-	gulp.watch(`${folders.src}/js/bundle/modules/**/*.js`, gulp.series('bundle', reload))
-);
+// // Task `bundle-modules:watch`
+// gulp.task('bundle-modules:watch', () =>
+// 	gulp.watch(`${folders.src}/js/bundle/modules/**/*.js`, gulp.series('bundle', reload))
+// );
