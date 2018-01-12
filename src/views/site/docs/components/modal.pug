@@ -6,20 +6,11 @@ block intro
 block content
 	+e.group
 		+docs-group-title('Modal example')
-		+b.BUTTON.btn(data-action="v-modal" data-open="#example-id") Open Modal
+		+b.BUTTON.btn(data-action="modal" data-open="#example-id") Open Modal
 		+b.modal#example-id
 			+e.box._default
 				+e.header
 					+e.P.title Modal title
-					+e.BUTTON.close(data-close="vmodal") &times;
+					+e.BUTTON.close(data-close="modal") &times;
 				+e.body
 					p Lorem....
-		+docs-code('pug')
-			|+b.BUTTON.btn(data-action="vmodal" data-open="#example-id") Open Modal
-			|+b.modal#example-id
-			|	+e.box._default
-			|		+e.header
-			|			+e.P.title Modal title
-			|			+e.BUTTON.close(data-close="vmodal") &times;
-			|		+e.body
-			|			p Lorem...

@@ -51,8 +51,8 @@ class Modal {
 
 		this.bodyEvents = ['click', 'touchstart'];
 
-		this.bodyEvents.forEach( (event) => {
-			document.body.addEventListener(event, (e) => {
+		this.bodyEvents.forEach( (bodyEvent) => {
+			document.body.addEventListener(bodyEvent, (e) => {
 				this._bodyClick(e, this);
 			});
 		});
@@ -133,97 +133,8 @@ class Modal {
 	}
 }
 
-
 (function(){
 	document.addEventListener("DOMContentLoaded", function(){
-
-		const themePrefix = '';
-
-		
-
 		new Modal();
-		//console.log(new Modal());
-
-		
-
-		// Modal Window initialization
-		// let themeModal = `${themePrefix}modal`;
-		// let modalBtn = document.querySelectorAll(`[data-action="${themeModal}"]`);
-		// let modalBtnL = modalBtn.length;
-
-		// const modal = document.querySelectorAll(`.${themeModal}`);
-		// const modalL = modal.length;
-
-		// const modalBtnClose = document.querySelectorAll(`[data-close="${themeModal}"]`);
-		// const modalBtnCloseL = modalBtnClose.length;
-
-		
-		// function modalClose(el){
-		// 	removeClass(el, `${themeModal}_showing_in`);
-		// 	removeClass(document.body, `${themeModal}-open`);
-		// 	// if(el.getElementsByClassName('vmodal__video')[0]){
-		// 	// 	el.getElementsByClassName('vmodal__video')[0].innerHTML = '';
-		// 	// }
-		// }
-
-		// function bodyClick(e){
-		// 	let target = getEventTarget(e);
-		// 	for(let i = 0; i < modalL; i++){
-		// 		if (target == modal[i]) {
-		// 			modalClose(modal[i]);
-		// 		}
-		// 	}
-		// }
-		// for(var i = 0; i < modalBtnL; i++){
-		// 	modalBtn[i].addEventListener('click', function(){
-
-				// // Get button data-attributes
-				// var modalData = this.dataset;
-
-				// // Get attribute data-open and replace # with empty line
-				// var modalID = modalData.open.replace("#", "");
-				
-				
-				// if( exists(document.getElementById(modalID) ) ){
-
-				// 	let modalCurrent = document.getElementById(modalID);
-
-				// 	addClass(document.body, `${themeModal}-open`);
-				// 	addClass(modalCurrent, `${themeModal}_showing_in`);
-
-				// 	// if(modalData.video != undefined){
-				// 	// 	let videoSRC = modalData.video;
-				// 	// 	let videoWrapper = modalCurrent.getElementsByClassName('v-modal__video')[0];
-
-				// 	// 	videoWrapper.innerHTML = '';
-
-				// 	// 	let videoIframe = document.createElement('iframe');
-
-				// 	// 	addClass(videoIframe, 'v-modal__iframe');
-				// 	// 	videoIframe.setAttribute('src', videoSRC);
-				// 	// 	videoWrapper.appendChild(videoIframe);
-				// 	// }
-
-				// }else{
-				// 	console.error('No element with ID: ' + modalID);
-				// }
-
-		// 	});
-		// }
-		
-		// for(let i = 0; i < modalBtnCloseL; i++){
-		// 	modalBtnClose[i].addEventListener('click', function(){
-		// 		modalClose(this.closest(`.${themeModal}`));
-		// 	});
-		// }
-		
-		// let bodyEvents = ['click', 'touchstart'];
-		// let bodyEventsL = bodyEvents.length;
-
-		// for(let i = 0; i < bodyEventsL; i++){
-		// 	document.body.addEventListener(bodyEvents[i], function(e) {
-		// 		bodyClick(e);
-		// 	}, false);
-		// }
 	});
 }());

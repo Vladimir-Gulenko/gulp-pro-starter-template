@@ -1,37 +1,50 @@
-/// Sizes for elements.
-$sizes: ("vtitle-xs": (xs: 18px), "vtitle-sm": (sm: 20px, md: 30px, lg: 40px), "vtitle-md": (sm: 30px, md: 40px, lg: 50px), "vtitle-lg": (sm: 40px, md: 50px, lg: 60px))
+/// Define sizes for title-xs
+$title-xs: ("title-xs": ('default': 18px, 'xs': 20px))
 
-%vtitle-default
+/// Define sizes for title-sm
+$title-sm: ("title-sm": ('default': 20px, 'sm': 20px, 'md': 30px, 'lg': 40px))
+
+/// Define sizes for title-md
+$title-md: ("title-md": ('default': 25px, 'sm': 30px, 'md': 40px, 'lg': 50px))
+
+/// Define sizes for title-lg
+$title-lg: ("title-lg": ('default': 30px, 'sm': 40px, 'md': 50px, 'lg': 60px))
+
+$sizes: map-merge($title-xs, $title-sm)
+$sizes: map-merge($sizes, $title-md)
+$sizes: map-merge($sizes, $title-lg)
+
+%title-default
   margin-top: 10px
   margin-bottom: 15px
   line-height: 1.2
   font-weight: normal
 
-.vtitle
++b('title')
   &-xs
-    font-size: 18px
+    //font-size: 18px
 
-    +fs("vtitle-xs")
+    +fs("title-xs")
 
-    @extend %vtitle-default
+    @extend %title-default
 
   &-sm
-    font-size: 20px
+    //font-size: 20px
 
-    +fs("vtitle-sm")
+    +fs("title-sm")
 
-    @extend %vtitle-default
+    @extend %title-default
 
   &-md
-    font-size: 25px
+    //font-size: 25px
 
-    +fs("vtitle-md")
+    +fs("title-md")
 
-    @extend %vtitle-default
+    @extend %title-default
 
   &-lg
-    font-size: 30px
+    //font-size: 30px
 
-    +fs("vtitle-lg")
+    +fs("title-lg")
 
-    @extend %vtitle-default
+    @extend %title-default
