@@ -3,9 +3,9 @@ block variables
 	- var title = "Gulp Pro Starter Template";
 	- var description = "Gulp Pro Starter Template";
 block nav
-	//include /sections/nav
+	include /components/nav
 block content
-	//include /sections/header
+	include /components/header
 	+b.BUTTON.btn(data-action="modal" data-open="#example-id") Open Modal
 	+b.modal._to-top#example-id
 		+e.box._default
