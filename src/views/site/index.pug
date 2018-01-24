@@ -6,11 +6,12 @@ block nav
 	include /components/nav
 block content
 	include /components/header
-	+b.BUTTON.btn(data-action="modal" data-open="#example-id") Open Modal
-	+b.modal._to-top#example-id
-		+e.box._default
-			+e.header
-				+e.P.title Modal title
-				+e.BUTTON.close(data-close="modal") &times;
-			+e.body
-				p Lorem....
+	+b.SECTION.full#id-1
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, quas.
+		a.anchor(href="#id-3") test
+	+b.SECTION.full#id-2
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, quas.
+		a.anchor(href="#id-2") test
+	+b.SECTION.full#id-3
+		a.anchor(href="#id-1") test
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, quas.

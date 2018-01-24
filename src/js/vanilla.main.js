@@ -137,11 +137,13 @@ class Modal {
 	document.addEventListener("DOMContentLoaded", function(){
 		new Modal();
 
+		const themePrefix = '';
+
 		// Anchors links
 			function scrollTo(element, to, duration) {
 				if (duration <= 0) return;
-				var difference = to - element.scrollTop - 75;
-				var perTick = difference / duration * 10;
+				let difference = to - element.scrollTop - 75;
+				let perTick = difference / duration * 10;
 				setTimeout(function() {
 					element.scrollTop = element.scrollTop + perTick;
 					if (element.scrollTop === to) return;
@@ -150,13 +152,15 @@ class Modal {
 			}
 			
 			// Anchors
-				const anchors = document.getElementsByClassName('anchor');
+				var anchors = document.getElementsByClassName('anchor');
 
 				for(let i = 0; i < anchors.length; i++){
-					anchors[i].addEventListener('click', (e) => {
+					anchors[i].addEventListener('click', function(e) {
 						e.preventDefault();
+						console.log('test');
 						let href = this.getAttribute("href").replace("#", "");
 						let scrollAnchor = document.getElementById(href);
+						console.log(scrollAnchor);
 						scrollTo(document.body, scrollAnchor.offsetTop, 600);
 					});
 				}
@@ -168,7 +172,7 @@ class Modal {
 				const jsNavLinks = document.querySelectorAll(`${themePrefix}nav__menu a[href*="#"]`);
 
 				for(var i = 0; i < jsNavLinks.length; i++){
-					jsNavLinks[i].addEventListener('click', (e) => {
+					jsNavLinks[i].addEventListener('click', function(e) {
 						e.preventDefault();
 
 						let vnavhref = this.getAttribute("href").replace("#", "");
