@@ -136,7 +136,10 @@
 	class Navigation {
 		constructor(){
 			this.prefix = '';
-			this.navigation = document.getElementById('navigation');
+			this.navigation = document.getElementById('js-navigation');
+
+			this.menu = document.getElementById('js-navigation-menu');
+
 			this.hamburger = document.getElementById('js-nav-hamburger');
 			this.addition = document.getElementById('js-nav-addition');
 			this.links = '.nav__menu-item-link';
@@ -150,6 +153,10 @@
 			}
 
 			this.linksScroll();
+
+			if(exists(this.navigation)) {
+				this.navigationScroll();
+			}
 			
 			
 			// this.buttons.forEach( (button) => {
@@ -157,9 +164,21 @@
 			// });
 		}
 
+		checkScrollY() {
+			window.scrollY > 0 ? addClass(this.navigation, 'nav_scrolled') : removeClass(this.navigation, 'nav_scrolled');
+		}
+
+		navigationScroll(){
+
+			this.checkScrollY();
+
+			window.addEventListener("scroll", ()	=> this.checkScrollY() );
+
+		}
+
 		hamburgerClick(el) {
 			toggleClass(this.hamburger, 'active');
-			toggleClass(this.navigation, `nav__menu_active`);
+			toggleClass(this.menu, `nav__menu_active`);
 		}
 
 		additionClick(el) {
