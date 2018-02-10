@@ -191,19 +191,13 @@
 				this.navigationScroll();
 			}
 
-			this.clickEvents = ['click'];
+			if(exists(this.hamburger)) {
+				this.hamburger.addEventListener( 'click', (e) => this.hamburgerClick(e) );
+			}
 
-			this.clickEvents.forEach( (clickEvent) => {
-			
-				if(exists(this.hamburger)) {
-					this.hamburger.addEventListener( clickEvent, (e) => this.hamburgerClick(e, this) );
-				}
-
-				if(exists(this.addition)) {
-					this.addition.addEventListener( clickEvent, (e) => this.additionClick(e, this) );
-				}
-
-			});
+			if(exists(this.addition)) {
+				this.addition.addEventListener( 'click', (e) => this.additionClick(e) );
+			}
 		}
 
 		checkScrollY() {
