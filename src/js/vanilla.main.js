@@ -170,7 +170,7 @@
 			for(let i = 0; i < this.modals.length; i++){
 
 				let targetModal = this.modals[i];
-				
+
 				if(target == targetModal){
 					this.modalClose(targetModal);
 					this._removeIframe(targetModal);
@@ -247,16 +247,8 @@
 		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 		if(iOS){
-			//console.log('IOS');
 			document.body.style.cursor = 'pointer';
 		}
-
-		//const btn = document.getElementById('test');
-
-		// btn.addEventListener('click', function(){
-		// 	alert(0);
-		// });
-		//alert(5);
 
 	});
 }());
