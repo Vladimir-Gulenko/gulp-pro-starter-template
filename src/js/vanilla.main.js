@@ -36,26 +36,50 @@
 			this.modals = document.querySelectorAll(`.${this.name}`);
 
 			// Open Buttons
-			this.buttons = document.querySelectorAll(`[data-action="${this.name}"]`);
+			this.openButtons = document.querySelectorAll(`[data-action="${this.name}"]`);
 
 			// Close Button(`x`)
 			this.closeButtons = document.querySelectorAll(`[data-close="${this.name}"]`);
 
-			this.buttons.forEach( (button) => {
-				button.addEventListener('click', (e) => this._showButtonClick(e, this));
-			});
+			this.modalClickEvents = ['click'];
 
-			this.closeButtons.forEach( (button) => {
-				button.addEventListener('click', (e) => this._closeButtonClick(e, this));
-			});
+			//log(this.openButtons);
+			// this.openButtons.forEach( (openButton) => {
+			// 	log(openButton);
+			// 	//openButton.addEventListener('click', (e) => this._showButtonClick(e, this));
+			// });
 
-			this.bodyEvents = ['click', 'touchstart'];
-
-			this.bodyEvents.forEach( (bodyEvent) => {
-				document.body.addEventListener(bodyEvent, (e) => {
-					this._bodyClick(e, this);
+			for(let i = 0; i < this.openButtons.length; i++){
+				this.openButtons[i].addEventListener('click', (e) => {
+					this._showButtonClick(e);
 				});
+			}
+
+			for(let i = 0; i < this.closeButtons.length; i++){
+				this.closeButtons[i].addEventListener('click', (e) => {
+					this._closeButtonClick(e);
+				});
+			}
+
+			document.body.addEventListener('click', (e) => {
+				this._bodyClick(e, this);
 			});
+
+			//console.log(this.openButtons.length);
+
+			// this.modalClickEvents.forEach( (modalClickEvent) => {
+
+			// 	// document.body.addEventListener(modalClickEvent, (e) => {
+			// 	// 	this._bodyClick(e, this);
+			// 	// });
+
+				
+
+			// 	// this.closeButtons.forEach( (button) => {
+			// 	// 	button.addEventListener(modalClickEvent, (e) => this._closeButtonClick(e, this));
+			// 	// });
+
+			// });
 		}
 
 
@@ -84,18 +108,23 @@
 				this.modalOpen(modalCurrent);
 
 				if(modalData.video != undefined){
-					let videoSRC = modalData.video;
-					let videoWrapper = modalCurrent.getElementsByClassName('modal__video')[0];
+					
 
-					videoWrapper.innerHTML = '';
+					if( exists(modalCurrent.getElementsByClassName('modal__video')[0]) ){
 
-					let videoIframe = document.createElement('iframe');
+						this._removeIframe(modalCurrent);
 
-					addClass(videoIframe, 'modal__video-iframe');
-					videoIframe.setAttribute('src', videoSRC);
-					videoIframe.setAttribute('allow', 'autoplay; encrypted-media');
-					videoIframe.setAttribute('allowfullscreen', 'allowfullscreen');
-					videoWrapper.appendChild(videoIframe);
+						let videoIframe = document.createElement('iframe');
+
+						addClass(videoIframe, 'modal__video-iframe');
+
+						let videoSRC = modalData.video;
+						videoIframe.setAttribute('src', videoSRC);
+						videoIframe.setAttribute('allow', 'autoplay; encrypted-media');
+						videoIframe.setAttribute('allowfullscreen', 'allowfullscreen');
+
+						videoWrapper.appendChild(videoIframe);
+					}
 				}
 
 			}else{
@@ -104,9 +133,10 @@
 		}
 
 		_removeIframe(element){
-			let _videoWrapper = element.getElementsByClassName('modal__video')[0];
-
-			_videoWrapper.innerHTML = '';
+			if( exists(element.getElementsByClassName('modal__video')[0]) ){
+				let _videoWrapper = element.getElementsByClassName('modal__video')[0];
+				_videoWrapper.innerHTML = '';
+			}
 		}
 
 		_closeButtonClick(e) {
@@ -150,31 +180,30 @@
 		constructor(){
 			this.prefix = '';
 			this.navigation = document.getElementById('js-navigation');
-
 			this.menu = document.getElementById('js-navigation-menu');
-
 			this.hamburger = document.getElementById('js-nav-hamburger');
 			this.addition = document.getElementById('js-nav-addition');
 			this.links = '.nav__menu-item-link';
-
-			if(exists(this.hamburger)) {
-				this.hamburger.addEventListener( 'click', (e) => this.hamburgerClick(e, this) );
-			}
-
-			if(exists(this.addition)) {
-				this.addition.addEventListener( 'click', (e) => this.additionClick(e, this) );
-			}
 
 			this.linksScroll();
 
 			if(exists(this.navigation)) {
 				this.navigationScroll();
 			}
+
+			this.clickEvents = ['click'];
+
+			this.clickEvents.forEach( (clickEvent) => {
 			
-			
-			// this.buttons.forEach( (button) => {
-			// 	button.addEventListener('click', (e) => this._showButtonClick(e, this));
-			// });
+				if(exists(this.hamburger)) {
+					this.hamburger.addEventListener( clickEvent, (e) => this.hamburgerClick(e, this) );
+				}
+
+				if(exists(this.addition)) {
+					this.addition.addEventListener( clickEvent, (e) => this.additionClick(e, this) );
+				}
+
+			});
 		}
 
 		checkScrollY() {
@@ -184,33 +213,53 @@
 		navigationScroll(){
 
 			this.checkScrollY();
-
 			window.addEventListener("scroll", ()	=> this.checkScrollY() );
 
 		}
 
 		hamburgerClick(el) {
+
 			toggleClass(this.hamburger, 'active');
 			toggleClass(this.menu, `nav__menu_active`);
+
 		}
 
 		additionClick(el) {
+
 			toggleClass(this.addition, 'active');
+
 		}
 
 		linksScroll() {
+
 			new SmoothScroll(this.links, {
 				after: () => {
 					removeClass(this.hamburger, 'active');
 					removeClass(this.navigation, `nav__menu_active`);
 				}
 			});
+
 		}
 	}
 
 	document.addEventListener("DOMContentLoaded", function(){
-		new Modal();
 
+		new Modal();
 		new Navigation();
+
+		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+		if(iOS){
+			//console.log('IOS');
+			document.body.style.cursor = 'pointer';
+		}
+
+		//const btn = document.getElementById('test');
+
+		// btn.addEventListener('click', function(){
+		// 	alert(0);
+		// });
+		//alert(5);
+
 	});
 }());
