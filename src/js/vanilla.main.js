@@ -146,7 +146,6 @@
 		}
 	}
 
-
 	class Navigation {
 		constructor(){
 			this.prefix = '';
