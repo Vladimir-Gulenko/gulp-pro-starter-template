@@ -62,7 +62,7 @@
 			}
 
 			document.body.addEventListener('click', (e) => {
-				this._bodyClick(e, this);
+				this._bodyClick(e);
 			});
 
 			//console.log(this.openButtons.length);
@@ -167,12 +167,15 @@
 			let target = this._getEventTarget(e);
 
 			//log(target);
-			this.modals.forEach( (modal) => {
-				if(target == modal){
-					this.modalClose(modal);
-					this._removeIframe(modal);
+			for(let i = 0; i < this.modals.length; i++){
+
+				let targetModal = this.modals[i];
+				
+				if(target == targetModal){
+					this.modalClose(targetModal);
+					this._removeIframe(targetModal);
 				}
-			});
+			}
 		}
 	}
 
