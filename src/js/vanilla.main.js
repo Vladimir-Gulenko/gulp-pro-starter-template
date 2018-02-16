@@ -232,7 +232,7 @@
 			new SmoothScroll(this.links, {
 				after: () => {
 					removeClass(this.hamburger, 'active');
-					removeClass(this.navigation, `nav__menu_active`);
+					removeClass(this.menu, `nav__menu_active`);
 				}
 			});
 
