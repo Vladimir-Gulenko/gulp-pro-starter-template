@@ -32,19 +32,16 @@ $themeColumn: "col"
         .#{$class}-offset-#{$i}
           margin-left: $defaultValue
 
-+make-column
++make-column()
 
 +min(xs)
   +make-column(xs)
 
-
 +min(sm)
   +make-column(sm)
 
-
 +min(md)
   +make-column(md)
-
 
 +min(lg)
   +make-column(lg)
@@ -54,7 +51,6 @@ $themeColumn: "col"
   [class*=#{$themePrefix}#{$themeColumn}-]
     flex-grow: 0
     flex-shrink: 0
-
     +padding-x(getComp(gutter))
 @else
   [class*=#{$themePrefix}#{$themeColumn}-]
