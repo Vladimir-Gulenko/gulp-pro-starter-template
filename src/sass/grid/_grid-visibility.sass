@@ -1,8 +1,8 @@
 =visibility($visibility)
-	.#{$themePrefix}hidden-#{$visibility}
+	+b('hidden-' + $visibility)
 		display: none !important
 
-	.#{$themePrefix}visible-#{$visibility}
+	+b('visible-' + $visibility)
 		display: block !important
 
 .#{$themePrefix}hidden,
