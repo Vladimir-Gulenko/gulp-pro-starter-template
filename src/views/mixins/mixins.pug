@@ -21,11 +21,7 @@ mixin add-meta(title, description, url, image)
 
 mixin menu-item(isLink,href, name)
 
-	- var menuItemClass = '';
-	if wordpress
-		- menuItemClass = 'menu-item';
-	else
-		- menuItemClass = themePrefix + themeNav + '__menu-item'; 
+	- var menuItemClass = 'menu-item';
 
 	li(class=menuItemClass)
 		if isLink === 'true'

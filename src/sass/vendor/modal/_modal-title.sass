@@ -1,8 +1,10 @@
 +b('modal')
   &__title
-    position: relative
+    +relative
+    
     margin-bottom: 20px
     padding-bottom: 7.5px
+    
     text-align: center
     font-size: 16px
     text-transform: uppercase
@@ -13,12 +15,9 @@
     +weight('bold')
 
     &:after
-      +pseudo
-
-      top: 100%
-      left: 50%
-      width: 25%
-      height: 2px
+      content: ''
+      +absolute(100%, null, null, 50%)
+      +size(25%, 2px)
       transform: translateX(-50%)
       background-color: $color-brand-1
 

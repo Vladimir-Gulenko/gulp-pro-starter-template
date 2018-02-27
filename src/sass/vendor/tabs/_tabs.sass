@@ -1,8 +1,8 @@
 %vtabs-transition
   +transition
 
-.vtabs
-  &__list
++b('tabs')
+  +e('list')
     $self: &
 
     font-size: 0
@@ -37,7 +37,7 @@
         background-color: lighten($color-brand-1, 15%)
         transform: none
 
-  &__content
+  +e('content')
     &-inner
       display: none
 

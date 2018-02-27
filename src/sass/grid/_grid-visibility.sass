@@ -6,12 +6,12 @@
 		display: block !important
 
 .#{$themePrefix}hidden,
-%v-visible
+%visible
 	display: none !important
 
 @each $br-name, $br-value in $breakpoints
 	+b('visible-' + $br-name)
-		@extend %v-visible
+		@extend %visible
 
 +min(lg)
 	+visibility(lg)
