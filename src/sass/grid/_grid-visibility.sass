@@ -1,31 +1,28 @@
 =visibility($visibility)
-  .#{$themePrefix}hidden-#{$visibility}
-    display: none !important
+	.#{$themePrefix}hidden-#{$visibility}
+		display: none !important
 
-  .#{$themePrefix}visible-#{$visibility}
-    display: block !important
+	.#{$themePrefix}visible-#{$visibility}
+		display: block !important
 
 .#{$themePrefix}hidden,
 %v-visible
-  display: none !important
+	display: none !important
 
 @each $br-name, $br-value in $breakpoints
-  .#{$themePrefix}visible-#{$br-name}
-    @extend %v-visible
+	+b('visible-' + $br-name)
+		@extend %v-visible
 
 +min(lg)
-  +visibility(lg)
-
+	+visibility(lg)
 
 +min(md)
-  +max(lg)
-    +visibility(md)
-
+	+max(lg)
+		+visibility(md)
 
 +min(sm)
-  +max(md)
-    +visibility(sm)
-
+	+max(md)
+		+visibility(sm)
 
 +max(sm)
-  +visibility(xs)
+	+visibility(xs)
