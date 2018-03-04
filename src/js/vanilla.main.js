@@ -41,13 +41,6 @@
 			// Close Button(`x`)
 			this.closeButtons = document.querySelectorAll(`[data-close="${this.name}"]`);
 
-			this.modalClickEvents = ['click'];
-
-			//log(this.openButtons);
-			// this.openButtons.forEach( (openButton) => {
-			// 	log(openButton);
-			// 	//openButton.addEventListener('click', (e) => this._showButtonClick(e, this));
-			// });
 
 			for(let i = 0; i < this.openButtons.length; i++){
 				this.openButtons[i].addEventListener('click', (e) => {
@@ -64,22 +57,6 @@
 			document.body.addEventListener('click', (e) => {
 				this._bodyClick(e);
 			});
-
-			//console.log(this.openButtons.length);
-
-			// this.modalClickEvents.forEach( (modalClickEvent) => {
-
-			// 	// document.body.addEventListener(modalClickEvent, (e) => {
-			// 	// 	this._bodyClick(e, this);
-			// 	// });
-
-				
-
-			// 	// this.closeButtons.forEach( (button) => {
-			// 	// 	button.addEventListener(modalClickEvent, (e) => this._closeButtonClick(e, this));
-			// 	// });
-
-			// });
 		}
 
 
