@@ -13,11 +13,14 @@
 
 
 		+ee("toggle")
+			+relative
+
 			display: block
 			-webkit-tap-highlight-color: transparent
 			outline: none
 			
 			cursor: pointer
+			z-index: 1
 
 			span
 				+relative
@@ -42,7 +45,6 @@
 				+absolute(-15px, 0)
 				+size(56px)
 				background-color: darken($color-responsive-menu, 15%)
-				z-index: -1
 				opacity: 0
 
 				+transition
