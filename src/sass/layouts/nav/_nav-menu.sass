@@ -1,22 +1,21 @@
-+b($themeNav)
-	
++b('nav')
 	+e("menu")
 		$self: &;
 		-webkit-overflow-scrolling: touch
 		+max(md)
-			transform: translateZ(0) translateX(-120%)
-			position: fixed
-			left: 0
-			width: 270px
-			height: 100%
+			
+			+fixed(56px, null, null, 0)
+			+size(270px, 100%)
 			padding: 0 0 100px 0
-			top: 56px
 			z-index: z("default")
 			overflow-y: auto
 
 			+transition
 
 			background-color: $color-responsive-menu
+			transform: translateZ(0) translateY(-120%)
+
+			z-index: -1
 
 			&_active
 				transform: none
