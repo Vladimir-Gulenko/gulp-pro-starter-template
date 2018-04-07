@@ -1,10 +1,6 @@
-+b('offset')
-	&-static
-		&-xs
-			margin-bottom: 15px
+$end: 3
 
-		&-sm
-			margin-bottom: 30px
-
-		&-md
-			margin-bottom: 45px
++b('mb')
+	@for $i from 1 through $end
+		&-#{$i}
+			margin-bottom: 15px * $i

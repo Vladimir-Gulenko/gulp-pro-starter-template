@@ -25,21 +25,8 @@
 +b("btn")
 	@extend %btn-placeholder
 
-	&-group
-		font-size: 0
-
-		+b("btn")
-			margin-right: 5px
-			margin-bottom: 5px
-
-	&_size
-		&-lg
+	&_lg
 			+btn-size($btn-large-padding, $btn-large-size)
-
-		&-fluid
-			display: block
-			width: 100%
-			text-align: center
 
 	&_shadow
 		&-brand-1
@@ -48,7 +35,7 @@
 		&:hover
 			box-shadow: none
 
-	&_navigation
+	&_nav
 		background-color: $color-responsive-menu-light
 
 		+max(md)
@@ -70,4 +57,4 @@
 	//-
 	//- Iteration button border-color
 	//-
-	+btn-border-iteration
+	//+btn-border-iteration
