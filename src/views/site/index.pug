@@ -1,4 +1,9 @@
-extends /extends/layout
+extends /layouts/base
+
+block blocks
+	include /blocks/nav/navBase
+	include /blocks/footerBase
+
 block variables
 	- var title = 'Gulp Pro Starter Template';
 	- var description = 'Gulp Pro Starter Template - Description';
@@ -6,6 +11,6 @@ block variables
 	- var image = 'img/logo.png';
 
 block nav
-	include /components/nav
+	+navBase()
 block content
-	include /components/header
+	+footerBase()

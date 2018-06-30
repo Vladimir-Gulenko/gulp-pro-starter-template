@@ -3,8 +3,6 @@ block variables
 //- Include helpers mixins
 include /mixins/mixins
 include /bem/index
-include /includes/config
-include /data/data
 //- End
 
 doctype html
@@ -13,6 +11,8 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 		include /includes/head
 		include /includes/styles
 		include /includes/scripts
+
+		block blocks
 	body
 		block nav
 		.site#page
