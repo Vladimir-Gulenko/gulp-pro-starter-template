@@ -1,4 +1,12 @@
 +b("list")
+	list-style: none
+
+	li
+		position: relative
+
+		&:after
+			+pseudo
+
 	+m('cancel')
 		li
 			padding-left: 30px

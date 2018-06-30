@@ -5,18 +5,16 @@
  
 import gulp 						from 'gulp';
 import folders					from './folders';
-import image 						from 'gulp-image';
-import del 							from 'del';
-import {server, reload, serve} from './browserSync';
-
+import imagemin 				from 'gulp-imagemin';
 
 // Task `image`
 gulp.task('image', () => {
-	//del(`${folders.build}/img`, {force: true})
 	gulp.src(`${folders.src}/img/**/*`)
-		.pipe(image({
-			zopflipng: false,
-			svgo: false
+		.pipe(imagemin({
+			interlaced: true,
+			progressive: true,
+			optimizationLevel: 5,
+			svgoPlugins: [{removeViewBox: true}]
 		}))
 		.pipe(gulp.dest(`${folders.build}/img`))
 });
@@ -24,5 +22,5 @@ gulp.task('image', () => {
 
 // Task `image:watch`
 gulp.task('image:watch', () =>
-	gulp.watch(`${folders.src}/img/**/*`).on('all', gulp.series('image', reload))
+	gulp.watch(`${folders.src}/img/**/*`, gulp.series('image'))
 );

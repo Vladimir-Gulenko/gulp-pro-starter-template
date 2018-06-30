@@ -1,4 +1,4 @@
-%btn-placeholder
+=btn-placeholder()
 	+relative
 	display: inline-block
 	
@@ -19,11 +19,10 @@
 	outline: none
 	transform: translateZ(0)
 
-	+transition
-
+	+transition()
 
 +b("btn")
-	@extend %btn-placeholder
+	+btn-placeholder()
 
 	&_lg
 			+btn-size($btn-large-padding, $btn-large-size)

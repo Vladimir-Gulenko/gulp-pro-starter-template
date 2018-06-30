@@ -3,18 +3,16 @@
 
 	width: 100%
 
-	&__row
-		#{$self}_block &
-			+rowOffset
+	&_block &__row
+		margin-bottom: 15px
 
 	+max(sm)
-		&__row
-			#{$self}_line &
-				+rowOffset
-
+		&_line &__row
+			margin-bottom: 15px
 
 	+min(sm)
-		#{$self}_line &
+		&_line &
+
 			&__content
 				display: flex
 				justify-content: center
@@ -26,7 +24,6 @@
 
 			&__submit
 				+size(100%)
-
 
 	@if $themeFormDesign == "new"
 		&__control
