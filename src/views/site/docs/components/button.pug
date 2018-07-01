@@ -1,15 +1,15 @@
 extends /site/docs/extends/layout
 block variables
-	- var title = 'Unit Test - Button'
+	- var title = 'Unit Test - Button';
 block intro
-	+docs-intro('Buttons', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
+	+docs-intro('Buttons')
 block content
 	+e.group
 		+docs-group-title('Button "Sizes":')
 		+b.btn-group
 			+b.BUTTON.btn Default button
 			+b.BUTTON.btn._size-lg Large button
-		+docs-code('pug')
+		pre
 			|+b.BUTTON.btn Default button
 			|+b.BUTTON.btn._size-lg Large button
 		+b.btn-group
@@ -30,9 +30,9 @@ block content
 		+docs-group-title('Button "Hover effect":')
 		+b.btn-group
 			+b.BUTTON.btn._brand-1._brand-1-simple Button "Simple"
-			+b.BUTTON.btn._brand-1.veffect._line.left.top Button "Line"
-			+b.BUTTON.btn._brand-1.veffect._skew Button "Skew"
-			+b.BUTTON.btn._brand-1.veffect._shutter-y-out Button "Shutter Y out"
-			+b.BUTTON.btn._brand-1.veffect._shutter-x-out Button "Shutter X out"
-			+b.BUTTON.btn._brand-1.veffect._bounce-top Button "Bounce Top"
-			+b.BUTTON.btn._brand-1.veffect._bounce-bottom Button "Bounce Bottom"
+			+b.BUTTON.btn._brand-1.effect._line.left.top Button "Line"
+			+b.BUTTON.btn._brand-1.effect._skew Button "Skew"
+			+b.BUTTON.btn._brand-1.effect._shutter-y-out Button "Shutter Y out"
+			+b.BUTTON.btn._brand-1.effect._shutter-x-out Button "Shutter X out"
+			+b.BUTTON.btn._brand-1.effect._bounce-top Button "Bounce Top"
+			+b.BUTTON.btn._brand-1.effect._bounce-bottom Button "Bounce Bottom"
