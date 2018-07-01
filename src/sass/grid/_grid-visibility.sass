@@ -5,9 +5,11 @@
 	+b('visible-' + $visibility)
 		display: block !important
 
-.#{$themePrefix}hidden,
 %visible
 	display: none !important
+
++b('hidden')
+	@extend %visible
 
 @each $br-name, $br-value in $breakpoints
 	+b('visible-' + $br-name)
