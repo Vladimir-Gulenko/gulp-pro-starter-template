@@ -2,7 +2,7 @@
 	$self: &
 
 	+e("addition")
-		+relative
+		+relative()
 
 		+ee("link")
 			display: block
@@ -22,10 +22,10 @@
 			
 			-webkit-tap-highlight-color: transparent
 			outline: none
-			font-size: 0
-			
 			cursor: pointer
 			z-index: 1
+			
+			font-size: 0
 
 			span
 				+relative()
