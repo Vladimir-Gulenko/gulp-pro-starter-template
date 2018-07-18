@@ -5,9 +5,8 @@ include /blocks/nav/navAddition
 mixin navBase(additionalClass)
 	+b.fixed
 		+b.nav#js-navigation&attributes(attributes)(class=additionalClass)
-			+e.content
-				+e.container.container
-					+e.row.row
-						+navLogo()
-						+navMenu()
-						+navAddition()
+			+e.container.container
+				+e.row.row
+					+navLogo()
+					+navMenu()
+					+navAddition()
