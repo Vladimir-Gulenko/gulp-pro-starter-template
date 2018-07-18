@@ -13,17 +13,22 @@
 
 
 		+ee("toggle")
-			+relative
-
-			display: block
+			+relative()
+			+size(100%)
+				
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			
 			-webkit-tap-highlight-color: transparent
 			outline: none
+			font-size: 0
 			
 			cursor: pointer
 			z-index: 1
 
 			span
-				+relative
+				+relative()
 				display: inline-block
 				vertical-align: middle
 
@@ -37,30 +42,31 @@
 
 
 		+max(md)
+			height: 100%
 			text-align: right
 
 			&:before
 				content: ''
 
-				+absolute(-15px, 0)
-				+size(56px)
+				+absolute(0, 0)
+				+size(50%, 100%)
 				background-color: darken($color-responsive-menu, 15%)
 				opacity: 0
 
-				+transition
+				+transition()
 
 			&.active
 				&:before
 					opacity: 1
 
 			&-links
-				+absolute(40px, 0)
+				+absolute(100%, 0)
 				min-width: 180px
 				padding: 15px
 				background-color: $color-responsive-menu
 				transform: translateZ(0) translateX(120%)
 
-				+transition
+				+transition()
 
 			&.active &-links
 				transform: none
